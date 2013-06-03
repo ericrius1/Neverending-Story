@@ -1,4 +1,4 @@
-8////////// Server only logic //////////
+////////// Server only logic //////////
 
 Meteor.methods({
   start_new_game: function () {
@@ -34,7 +34,12 @@ Meteor.methods({
             scores[word.player_id] = 0;
           scores[word.player_id] += word.score;
         });
-        
+        var high_score = _.max(scores);
+        var winners = [];
+        _.each(scores, function (score, player_id) {
+          if (score === high_score)
+            winners.push(player_id);
+        });
         Games.update(game_id, {$set: {winners: winners}});
       }
     }, 1000);
