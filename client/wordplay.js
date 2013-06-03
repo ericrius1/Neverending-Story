@@ -67,10 +67,6 @@ Template.scratchpad.show = function () {
 
 
 
-Template.words.words = function () {
-  return Words.find({game_id: game() && game()._id,
-                    player_id: this._id});
-};
 
 
 //////

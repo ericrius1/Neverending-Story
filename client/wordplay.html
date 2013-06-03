@@ -9,48 +9,16 @@
 <template name="page">
   <div id="main">
     <div id="left">
-      {{> board }}
+      
     </div>
     <div id="right">
       {{> lobby }}
       {{> scratchpad }}
-      {{> postgame }}
-      {{> scores }}
     </div>
   </div>
 </template>
 
-<template name="board">
-  <div id="clock">
-    {{ clock }}
-  </div>
-  <div id="board">
-    <div>
-      <div class="square {{ selected 0 }}">{{ square 0 }}</div>
-      <div class="square {{ selected 1 }}">{{ square 1 }}</div>
-      <div class="square {{ selected 2 }}">{{ square 2 }}</div>
-      <div class="square {{ selected 3 }}">{{ square 3 }}</div>
-    </div>
-    <div>
-      <div class="square {{ selected 4 }}">{{ square 4 }}</div>
-      <div class="square {{ selected 5 }}">{{ square 5 }}</div>
-      <div class="square {{ selected 6 }}">{{ square 6 }}</div>
-      <div class="square {{ selected 7 }}">{{ square 7 }}</div>
-    </div>
-    <div>
-      <div class="square {{ selected 8 }}">{{ square 8 }}</div>
-      <div class="square {{ selected 9 }}">{{ square 9 }}</div>
-      <div class="square {{ selected 10 }}">{{ square 10 }}</div>
-      <div class="square {{ selected 11 }}">{{ square 11 }}</div>
-    </div>
-    <div>
-      <div class="square {{ selected 12 }}">{{ square 12 }}</div>
-      <div class="square {{ selected 13 }}">{{ square 13 }}</div>
-      <div class="square {{ selected 14 }}">{{ square 14 }}</div>
-      <div class="square {{ selected 15 }}">{{ square 15 }}</div>
-    </div>
-  </div>
-</template>
+
 
 <template name="lobby">
   <div>
@@ -93,17 +61,7 @@
   </div>
 </template>
 
-<template name="scores">
-  <div>
-    {{#if show}}
-    <div id="scores">
-      {{#each players}}
-        {{> player }}
-      {{/each}}
-    </div>
-    {{/if}}
-  </div>
-</template>
+
 
 <template name="player">
   <div class="player">
@@ -122,15 +80,4 @@
   </div>
 </template>
 
-<template name="words">
-  <div class="words">
-    {{#each words}}
-    <div id="word_{{_id}}" class="word {{state}}">
-      <span class="score">
-        {{score}}
-      </span>
-      {{word}}
-    </div>
-    {{/each}}
-  </div>
-</template>
+
