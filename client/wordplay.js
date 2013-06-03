@@ -58,113 +58,14 @@ Template.lobby.events({
   }
 });
 
-//////
-////// board template: renders the board and the clock given the
-////// current game.  if there is no game, show a splash screen.
-//////
-var SPLASH = ['','','','',
-              'W', 'O', 'R', 'D',
-              'P', 'L', 'A', 'Y',
-              '','','',''];
-
-Template.board.square = function (i) {
-  var g = game();
-  return g && g.board && g.board[i] || SPLASH[i];
-};
-
-Template.board.selected = function (i) {
-  return Session.get('selected_' + i);
-};
-
-Template.board.clock = function () {
-  var clock = game() && game().clock;
-
-  if (!clock || clock === 0)
-    return;
-
-  // format into M:SS
-  var min = Math.floor(clock / 60);
-  var sec = clock % 60;
-  return min + ':' + (sec < 10 ? ('0' + sec) : sec);
-};
-
-Template.board.events({
-  'click .square': function (evt) {
-    var textbox = $('#scratchpad input');
-    textbox.val(textbox.val() + evt.target.innerHTML);
-    textbox.focus();
-  }
-});
-
-//////
-////// scratchpad is where we enter new words.
-//////
 
 Template.scratchpad.show = function () {
   return game() && game().clock > 0;
 };
 
-Template.scratchpad.events({
-  'click button, keyup input': function (evt) {
-    var textbox = $('#scratchpad input');
-    // if we clicked the button or hit enter
-    if (evt.type === "click" ||
-        (evt.type === "keyup" && evt.which === 13)) {
 
-      var word_id = Words.insert({player_id: Session.get('player_id'),
-                                  game_id: game() && game()._id,
-                                  word: textbox.val().toUpperCase(),
-                                  state: 'pending'});
-      Meteor.call('score_word', word_id);
-      textbox.val('');
-      textbox.focus();
-      clear_selected_positions();
-    } else {
-      set_selected_positions(textbox.val());
-    }
-  }
-});
 
-Template.postgame.show = function () {
-  return game() && game().clock === 0;
-};
 
-Template.postgame.events({
-  'click button': function (evt) {
-    Players.update(Session.get('player_id'), {$set: {game_id: null}});
-  }
-});
-
-//////
-////// scores shows everyone's score and word list.
-//////
-
-Template.scores.show = function () {
-  return !!game();
-};
-
-Template.scores.players = function () {
-  return game() && game().players;
-};
-
-Template.player.winner = function () {
-  var g = game();
-  if (g.winners && _.include(g.winners, this._id))
-    return 'winner';
-  return '';
-};
-
-Template.player.total_score = function () {
-  var words = Words.find({game_id: game() && game()._id,
-                          player_id: this._id});
-
-  var score = 0;
-  words.forEach(function (word) {
-    if (word.score)
-      score += word.score;
-  });
-  return score;
-};
 
 Template.words.words = function () {
   return Words.find({game_id: game() && game()._id,
@@ -195,7 +96,6 @@ Meteor.startup(function () {
       var me = player();
       if (me && me.game_id) {
         Meteor.subscribe('games', me.game_id);
-        Meteor.subscribe('words', me.game_id, Session.get('player_id'));
       }
     }
   });

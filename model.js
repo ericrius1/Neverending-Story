@@ -4,8 +4,6 @@ Games = new Meteor.Collection('games');
 // { board: ['A','I',...], clock: 60,
 //   players: [{player_id, name}], winners: [player_id] }
 
-Words = new Meteor.Collection('words');
-// {player_id: 10, game_id: 123, word: 'hello', state: 'good', score: 4}
 
 Players = new Meteor.Collection('players');
 // {name: 'matt', game_id: 123}
