@@ -18,6 +18,8 @@
   </div>
 </template>
 
+
+
 <template name="lobby">
   <div>
     {{#if show }}
@@ -49,15 +51,6 @@
   {{/if}}
 </template>
 
-<template name="postgame">
-  <div>
-    {{#if show}}
-    <div id="postgame">
-      <button name="backtolobby" class="lobby">Back to lobby</button>
-    </div>
-    {{/if}}
-  </div>
-</template>
 
 
 
@@ -78,4 +71,15 @@
   </div>
 </template>
 
-
+<template name="words">
+  <div class="words">
+    {{#each words}}
+    <div id="word_{{_id}}" class="word {{state}}">
+      <span class="score">
+        {{score}}
+      </span>
+      {{word}}
+    </div>
+    {{/each}}
+  </div>
+</template>

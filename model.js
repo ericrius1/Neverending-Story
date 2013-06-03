@@ -1,8 +1,6 @@
 ////////// Shared code (client and server) //////////
 
 Games = new Meteor.Collection('games');
-// { board: ['A','I',...], clock: 60,
-//   players: [{player_id, name}], winners: [player_id] }
 
 
 Players = new Meteor.Collection('players');

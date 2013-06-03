@@ -16,7 +16,6 @@ Meteor.methods({
                          {fields: {_id: true, name: true}}).fetch();
     Games.update({_id: game_id}, {$set: {players: p}});
 
-
     // wind down the game clock
     var clock = 120;
     var interval = Meteor.setInterval(function () {
@@ -27,26 +26,11 @@ Meteor.methods({
       if (clock === 0) {
         // stop the clock
         Meteor.clearInterval(interval);
-        // declare zero or more winners
-        var scores = {};
-        Words.find({game_id: game_id}).forEach(function (word) {
-          if (!scores[word.player_id])
-            scores[word.player_id] = 0;
-          scores[word.player_id] += word.score;
-        });
-        var high_score = _.max(scores);
-        var winners = [];
-        _.each(scores, function (score, player_id) {
-          if (score === high_score)
-            winners.push(player_id);
-        });
-        Games.update(game_id, {$set: {winners: winners}});
       }
     }, 1000);
 
     return game_id;
   },
-
 
   keepalive: function (player_id) {
     check(player_id, String);
