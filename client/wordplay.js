@@ -25,9 +25,11 @@ Template.lobby.show = function () {
 };
 
 Template.lobby.waiting = function () {
+  //$ne selects the documents where the value of the field is not equal to the specified value
+  //So in this case we're returning a list of all the players but the current one
   var players = Players.find({_id: {$ne: Session.get('player_id')},
                               name: {$ne: ''},
-                              game_id: {$exists: false}});
+                              game_id: {$exists: false}}); //Only select players not in a game
 
   return players;
 };

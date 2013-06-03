@@ -2,11 +2,11 @@
 
 Meteor.methods({
   start_new_game: function () {
-    // create a new game w/ fresh board
-    var game_id = Games.insert({board: new_board(),
-                                clock: 120});
+    var game_id = Games.insert({clock: 120});
 
     // move everyone who is ready in the lobby to the game
+    //multi: true modifies all the matching documents. 
+    //In this case it will move all the ready players to the game instead of just one
     Players.update({game_id: null, idle: false, name: {$ne: ''}},
                    {$set: {game_id: game_id}},
                    {multi: true});
