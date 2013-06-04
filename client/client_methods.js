@@ -9,5 +9,5 @@ Meteor.clientMethods = {
     var me = Meteor.clientMethods.player();
     return me && me.game_id && Games.findOne(me.game_id);
   }
-
+  
 };

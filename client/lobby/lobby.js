@@ -55,8 +55,7 @@ Meteor.startup(function () {
   var player_id = Players.insert({name: '', idle: false});
   Session.set('player_id', player_id);
 
-  // subscribe to all the players, the game i'm in, and all
-  // the words in that game.
+
   Deps.autorun(function () {
     Meteor.subscribe('players');
 
