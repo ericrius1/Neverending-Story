@@ -9,7 +9,8 @@ Template.lobby.waiting = function () {
   //So in this case we're returning a list of all the players but the current one
   var players = Players.find({_id: {$ne: Session.get('player_id')},
                               name: {$ne: ''},
-                              game_id: {$exists: false}}); //Only select players not in a game
+                              game_id: {$exists: false}, //Only select players not in a game
+                              looking: true}); //player must be looking for game 
 
   return players;
 };
@@ -54,7 +55,6 @@ Meteor.startup(function () {
   // knows about us.
   var player_id = Players.insert({name: '', idle: false});
   Session.set('player_id', player_id);
-
 
   Deps.autorun(function () {
     Meteor.subscribe('players');

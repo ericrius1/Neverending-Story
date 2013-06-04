@@ -22,10 +22,11 @@ input {
 
 button {
     position: relative;
-    bottom: 3px;
-    margin: 10px;
+    bottom: 60px;
+    margin: 2px;
     height: 50px;
-    background-color:#E6EFC2;
+    background-color:#742180;
+    color: #EDDC1A;
     border:1px solid #dedede;
     font-weight:bold;
     cursor:pointer;
@@ -33,12 +34,12 @@ button {
 }
 
 button:hover {
-    background-color:#D6DFb2;
+    background-color:#AB1BC4;
     border:1px solid #C6D880;
 }
 
 button:active {
-    background-color:#529214;
-    border:1px solid #529214;
+    background-color:#ED1AD5;
+    border:6px solid #EDDC1A;
     color:#fff;
 }

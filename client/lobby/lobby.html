@@ -18,20 +18,7 @@
   <div>
     {{#if show }}
     <div id="lobby">
-      <h2>What's your name?</h2>
-      <input id="myname" type="text" />
-      {{#if count}}
-      <h1>{{count}} other players are in the lobby:</h1>
-      {{#each waiting }}
-      <div class="player">{{name}}</div>
-      {{/each}}
-      {{/if}}
-      <div>
-        <button id="startgame" class="startgame" {{{disabled}}}>
-          {{#if count}} Let's create an epic story! {{else}} Play solo {{/if}}
-        </button>
-      </div>
-    </div>
+      <button id="startgame" class="startgame">Join Story</button>
     {{/if}}
   </div>
 </template>
