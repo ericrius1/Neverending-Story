@@ -10,7 +10,6 @@ var player = function () {
 
 var game = function () {
   var me = player();
-  debugger;
   return me && me.game_id && Games.findOne(me.game_id);
 };
 
