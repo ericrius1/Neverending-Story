@@ -1,0 +1,47 @@
+<head>
+  <title>Word play!</title>
+</head>
+
+<body>
+  {{> page}}
+</body>
+
+<template name="page">
+  <div id="main">
+    <div id="left">
+      
+    </div>
+    <div id="right">
+      {{> lobby }}
+      {{> scratchpad }}
+    </div>
+  </div>
+</template>
+
+
+<template name="lobby">
+  <div>
+    {{#if show }}
+    <div id="lobby">
+      <h1>What's your name?</h1>
+      <input id="myname" type="text" />
+      {{#if count}}
+      <h1>{{count}} other players are in the lobby:</h1>
+      {{#each waiting }}
+      <div class="player">{{name}}</div>
+      {{/each}}
+      {{/if}}
+      <div>
+        <button id="startgame" class="startgame" {{{disabled}}}>
+          {{#if count}} Let's create an epic story! {{else}} Play solo {{/if}}
+        </button>
+      </div>
+    </div>
+    {{/if}}
+  </div>
+</template>
+
+
+
+
+
