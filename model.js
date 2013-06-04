@@ -124,19 +124,22 @@ if (Meteor.isServer) {
     return Players.find({idle: false});
   });
 
+  Players.allow({
+    insert: function () {
+      return true ;
+    },
+
+    update: function() {
+      return true;
+    }
+  });
+
   // publish single games
   Meteor.publish('games', function (id) {
     check(id, String);
     return Games.find({_id: id});
   });
 
-  // publish all my words and opponents' words that the server has
-  // scored as good.
-  Meteor.publish('words', function (game_id, player_id) {
-    check(game_id, String);
-    check(player_id, String);
-    return Words.find({$or: [{game_id: game_id, state: 'good'},
-                             {player_id: player_id}]});
-  });
+  
 }
 
