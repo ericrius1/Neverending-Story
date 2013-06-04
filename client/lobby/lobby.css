@@ -1,41 +1,3 @@
-body {
-    margin: 0px;
-    background-color: #f4f4f4;
-    font-family: Helvetica, Arial, sans-serif;
-}
-
-/* base styles */
-
-input {
-    height: 50px;
-    width: 300px;
-    font-size: 2em;
-    border: 2px solid black;
-    padding: 5px;
-}
-
-button {
-    position: relative;
-    bottom: 3px;
-    margin: 10px;
-    height: 50px;
-    background-color:#E6EFC2;
-    border:1px solid #dedede;
-    font-weight:bold;
-    cursor:pointer;
-    font-size: 1.5em;
-}
-
-button:hover {
-    background-color:#D6DFb2;
-    border:1px solid #C6D880;
-}
-
-button:active {
-    background-color:#529214;
-    border:1px solid #529214;
-    color:#fff;
-}
 
 /*******/
 
@@ -75,15 +37,5 @@ button:active {
     text-align: center;
 }
 
-#scratchpad {
-    height: 100px;
-}
 
-#scratchpad input {
-    width: 70%;
-}
-
-#scratchpad h1 {
-    float: left;
-}
 

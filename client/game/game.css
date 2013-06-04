@@ -1,0 +1,11 @@
+#submissions {
+    height: 100px;
+}
+
+#submissions input {
+    width: 100%;
+}
+
+#submissions h1 {
+    float: left;
+}

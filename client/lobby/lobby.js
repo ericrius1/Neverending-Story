@@ -1,23 +1,3 @@
-////////// Main client application logic //////////
-
-//////
-////// Utility functions
-//////
-
-// var player = function () {
-//   return Players.findOne(Session.get('player_id'));
-// };
-
-// var game = function () {
-//   var me = player();
-//   return me && me.game_id && Games.findOne(me.game_id);
-// };
-
-
-//////
-////// lobby template: shows everyone not currently playing, and
-////// offers a button to start a fresh game.
-//////
 
 Template.lobby.show = function () {
   // only show lobby if we're not in a game
@@ -59,12 +39,6 @@ Template.lobby.events({
     Meteor.call('start_new_game');
   }
 });
-
-
-
-
-
-
 
 
 //////
