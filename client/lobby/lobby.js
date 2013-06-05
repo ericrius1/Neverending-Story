@@ -6,8 +6,10 @@ Template.lobby.show_lobby = function () {
 
 Template.lobby.looking = function() {
   var player = Players.findOne({_id: Session.get('player_id')});
-  debugger;
-
+  if(player!== undefined){
+    debugger;
+    return player.looking;
+  }
 }
 
 Template.lobby.waiting = function () {
@@ -17,6 +19,7 @@ Template.lobby.waiting = function () {
                               name: {$ne: ''},
                               game_id: {$exists: false}, //Only select players not in a game
                               looking: true}); //player must be looking for game 
+  console.log(players);
 
   return players;
 };
@@ -47,7 +50,6 @@ Template.lobby.events({
   }
 });
 
-
 //////
 ////// Initialization
 //////
@@ -60,7 +62,6 @@ Meteor.startup(function () {
   // a pre-existing player, and if it exists, make sure the server still
   // knows about us.
   var player_id = Players.insert({name: ''});
-  console.log(player_id)
   Session.set('player_id', player_id);
 
   Deps.autorun(function () {
@@ -74,13 +75,5 @@ Meteor.startup(function () {
     }
   });
 
-  // send keepalives so the server can tell when we go away.
-  //
-  // XXX this is not a great idiom. meteor server does not yet have a
-  // way to expose connection status to user code. Once it does, this
-  // code can go away.
-  Meteor.setInterval(function() {
-    if (Meteor.status().connected)
-      Meteor.call('keepalive', Session.get('player_id'));
-  }, 20*1000);
+
 });
