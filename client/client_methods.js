@@ -12,6 +12,9 @@ Meteor.clientMethods = {
 
   remaining_players: function() {
     console.log(Meteor.globalProperties.minPlayersPerGame);
+    var numPlayersLooking = Players.find({looking:true}).count();
+    debugger;
+    return Meteor.globalProperties.minPlayersPerGame - numPlayersLooking;
   }
 
 
