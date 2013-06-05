@@ -8,5 +8,11 @@ Meteor.clientMethods = {
   game: function() {
     var me = Meteor.clientMethods.player();
     return me && me.game_id && Games.findOne(me.game_id);
+  },
+
+  remaining_players: function() {
+    console.log(Meteor.globalProperties.minPlayersPerGame);
   }
+
+
 };

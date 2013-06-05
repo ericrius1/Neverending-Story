@@ -11,6 +11,10 @@ Template.lobby.looking = function() {
   }
 }
 
+Template.lobby.remaining_players = function() {
+  return Meteor.clientMethods.remaining_players();
+}
+
 
 
 Template.lobby.events({
