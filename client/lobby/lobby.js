@@ -1,8 +1,10 @@
 
-Template.lobby.show = function () {
+Template.lobby.show_lobby = function () {
   // only show lobby if we're not in a game
   return !Meteor.clientMethods.game();
 };
+
+Template.lobby.show_join_story
 
 Template.lobby.waiting = function () {
   //$ne selects the documents where the value of the field is not equal to the specified value

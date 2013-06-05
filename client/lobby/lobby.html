@@ -16,9 +16,13 @@
 
 <template name="lobby">
   <div>
-    {{#if show }}
+    {{#if show_lobby }}
     <div id="lobby">
-      <button id="startgame" class="startgame">Join Story</button>
+      {{#if looking}}
+         <div>Looking for players</div>
+      {{else}}
+        <button id="join_story" class="join_story">Join Story</button>
+      {{/if}}
     {{/if}}
   </div>
 </template>
