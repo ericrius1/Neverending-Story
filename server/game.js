@@ -31,5 +31,9 @@ Meteor.methods({
     Players.update({game_id: null, looking:true},
       {$set: {game_id: game_id}},
       {multi: true});
+    //Once we have moved these players into a new game, 
+    //set numPlayersLooking back to 0
+    numPlayersLooking = 0;
   }
+
 });

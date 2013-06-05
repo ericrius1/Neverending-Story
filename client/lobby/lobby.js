@@ -11,32 +11,6 @@ Template.lobby.looking = function() {
   }
 }
 
-Template.lobby.waiting = function () {
-  //$ne selects the documents where the value of the field is not equal to the specified value
-  //So in this case we're returning a list of all the players but the current one
-  var players = Players.find({_id: {$ne: Session.get('player_id')},
-                              name: {$ne: ''},
-                              game_id: {$exists: false}, //Only select players not in a game
-                              looking: true}); //player must be looking for game 
-  console.log(players);
-
-  return players;
-};
-
-Template.lobby.count = function () {
-  var players = Players.find({_id: {$ne: Session.get('player_id')},
-                              name: {$ne: ''},
-                              game_id: {$exists: false}});
-
-  return players.count();
-};
-
-Template.lobby.disabled = function () {
-  var me = Meteor.clientMethods.player();
-  if (me && me.name)
-    return '';
-  return 'disabled="disabled"';
-};
 
 
 Template.lobby.events({
