@@ -7,7 +7,6 @@ Template.lobby.show_lobby = function () {
 Template.lobby.looking = function() {
   var player = Players.findOne({_id: Session.get('player_id')});
   if(player!== undefined){
-    debugger;
     return player.looking;
   }
 }
