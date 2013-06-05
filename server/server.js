@@ -1,21 +1,13 @@
 ////////// Server only logic //////////
 
-var numPlayersLooking;
-var numPlayersPerGame;
+
 
 Meteor.startup(function() {
-  numPlayersLooking=0;
-  numPlayersPerGame = 2;
   var query = Players.find({
     looking: true
   });
   var handle = query.observeChanges({
     added: function() {
-      numPlayersLooking++;
-      console.log(numPlayersLooking);
-      if(numPlayersLooking == numPlayersPerGame){
-        Meteor.call("start_new_game");
-      }
     }
   });
 });
