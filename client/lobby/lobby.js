@@ -4,7 +4,11 @@ Template.lobby.show_lobby = function () {
   return !Meteor.clientMethods.game();
 };
 
-Template.lobby.show_join_story
+Template.lobby.looking = function() {
+  var player = Players.findOne({_id: Session.get('player_id')});
+  debugger;
+
+}
 
 Template.lobby.waiting = function () {
   //$ne selects the documents where the value of the field is not equal to the specified value
@@ -38,8 +42,8 @@ Template.lobby.events({
     var name = $('#lobby input#myname').val().trim();
     Players.update(Session.get('player_id'), {$set: {name: name}});
   },
-  'click button.startgame': function () {
-    Meteor.call('start_new_game');
+  'click button.join_story': function () {
+    Players.update(Session.get('player_id'), {$set: {looking: true}})
   }
 });
 
@@ -55,7 +59,8 @@ Meteor.startup(function () {
   // Session.get('player_id') will return a real id. We should check for
   // a pre-existing player, and if it exists, make sure the server still
   // knows about us.
-  var player_id = Players.insert({name: '', idle: false});
+  var player_id = Players.insert({name: ''});
+  console.log(player_id)
   Session.set('player_id', player_id);
 
   Deps.autorun(function () {

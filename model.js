@@ -14,9 +14,9 @@ Meteor.methods({
 
 
 if (Meteor.isServer) {
-  // publish all the non-idle players.
+  // publish all the players
   Meteor.publish('players', function () {
-    return Players.find({idle: false});
+    return Players.find({});
   });
 
   Players.allow({
