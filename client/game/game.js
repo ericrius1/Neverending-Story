@@ -1,7 +1,8 @@
 Template.game.show_game = function() {
-  return Meteor.clientMethods.game(); 
+  console.log(Meteor.clientMethods.game()!==undefined);
+  return Meteor.clientMethods.game()!==undefined; 
 }
 
 Template.game.players = function() {
-  return Players.find({game_id: Meteor.clientMethods.game()});
+  return Meteor.clientMethods.game().players;
 }

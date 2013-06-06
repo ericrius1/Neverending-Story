@@ -1,7 +1,11 @@
 <template name = "game">
-  {{#each players}}
-        {{> player }}
-  {{/each}}
+
+  {{#if show_game}}
+    <div>HELEE</div>
+    {{#each players}}
+          {{> player }}
+    {{/each}}
+  {{/if}}
 </template>
 
 
