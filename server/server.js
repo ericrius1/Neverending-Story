@@ -8,7 +8,9 @@ Meteor.startup(function() {
   });
   var handle = query.observeChanges({
     added: function() {
+      debugger;
       if(Meteor.globalMethods.remaining_players() <=0 ){
+        console.log('new game')
         Meteor.call('start_new_game');
       }
     }
@@ -22,8 +24,8 @@ Meteor.methods({
     var game_id = Games.insert({});
 
     //Move everyone who declared themselves ready in the lobby into the game
-    Players.update({game_id: null, looking:false},
-      {$set: {game_id: game_id}},
+    Players.update({game_id: null, looking:true},
+      {$set: {game_id: game_id, looking: false}},
       {multi: true});
   }
 });
