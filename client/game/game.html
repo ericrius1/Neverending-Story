@@ -1,7 +1,9 @@
 <template name = "game">
 
   {{#if show_game}}
-    {{clock}}
+    <div id = "clock">
+      {{clock}}
+    </div>
     {{#each players}}
           {{> player }}
     {{/each}}

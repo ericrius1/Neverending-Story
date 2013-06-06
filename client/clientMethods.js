@@ -1,4 +1,4 @@
-Meteor.clientMethods = {
+client = {
 
   player: function() {
     return Players.findOne(Session.get('player_id'));
@@ -6,7 +6,7 @@ Meteor.clientMethods = {
   },
 
   game: function() {
-    var me = Meteor.clientMethods.player();
+    var me = client.player();
     return me && me.game_id && Games.findOne(me.game_id);
   },
 

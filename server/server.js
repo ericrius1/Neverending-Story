@@ -9,7 +9,7 @@ Meteor.startup(function() {
   var handle = query.observeChanges({
     added: function() {
       debugger;
-      if(Meteor.globalMethods.remaining_players() <=0 ){
+      if(global.remaining_players() <=0 ){
         console.log('new game')
         Meteor.call('start_new_game');
       }
@@ -31,5 +31,13 @@ Meteor.methods({
     var p = Players.find({game_id: game_id},
                         {fields: {_id: true, name: true}}).fetch();
     Games.update({_id: game_id}, {$set: {players: p}});
+
+    //Window down the game clock
+    var clock = 30;
+    var interval = Meteor.setInterval(function() {
+      clock -=1;
+      Games.update(game_id, {$set: {clock: clock}});
+    }, 1000);
   }
 });
+

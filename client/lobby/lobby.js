@@ -1,6 +1,6 @@
 Template.lobby.show_lobby = function() {
   // only show lobby if we're not in a game
-  return !Meteor.clientMethods.game();
+  return !client.game();
 };
 
 Template.lobby.looking = function() {
@@ -13,11 +13,11 @@ Template.lobby.looking = function() {
 };
 
 Template.lobby.remaining_players = function() {
-  return Meteor.globalMethods.remaining_players();
+  return global.remaining_players();
 };
 
 Template.lobby.disabled = function() {
-  var me = Meteor.clientMethods.player();
+  var me = client.player();
   if (me && me.name)
     return '';
   return 'disabled="disabled"';
@@ -61,7 +61,7 @@ Meteor.startup(function() {
     Meteor.subscribe('players');
 
     if (Session.get('player_id')) {
-      var me = Meteor.clientMethods.player();
+      var me = client.player();
       if (me && me.game_id) {
         Meteor.subscribe('games', me.game_id);
       }

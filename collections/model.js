@@ -7,10 +7,6 @@ Games = new Meteor.Collection('games');
 Players = new Meteor.Collection('players');
 // {name: 'matt', game_id: 123}
 
-Meteor.globalProperties = {
-  minPlayersPerGame: 2
-};
-
 if (Meteor.isServer) {
   // publish all the players
   Meteor.publish('players', function() {

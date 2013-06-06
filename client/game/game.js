@@ -1,8 +1,13 @@
 Template.game.show_game = function() {
-  console.log(Meteor.clientMethods.game()!==undefined);
-  return Meteor.clientMethods.game()!==undefined; 
+  console.log(client.game()!==undefined);
+  return client.game()!==undefined; 
+}
+
+Template.game.clock = function() {
+  return client.game().clock
+  
 }
 
 Template.game.players = function() {
-  return Meteor.clientMethods.game().players;
+  return client.game().players;
 }
