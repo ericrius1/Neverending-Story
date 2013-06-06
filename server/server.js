@@ -27,5 +27,9 @@ Meteor.methods({
     Players.update({game_id: null, looking:true},
       {$set: {game_id: game_id, looking: false}},
       {multi: true});
+
+    var p = Players.find({game_id: game_id},
+                        {fields: {_id: true, name: true}}).fetch();
+    Games.update({_id: game_id}, {$set: {players: p}});
   }
 });

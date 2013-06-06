@@ -1,5 +1,5 @@
 <template name = "game">
-  {{#if show_game}}
-    <div>Get Ready!</div>
-  {{/if}}
+  {{#each players}}
+        {{> player }}
+  {{/each}}
 </template>
