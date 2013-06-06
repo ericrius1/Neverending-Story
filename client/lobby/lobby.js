@@ -9,13 +9,11 @@ Template.lobby.looking = function() {
   if(player!== undefined){
     return player.looking;
   }
-}
+};
 
 Template.lobby.remaining_players = function() {
-  return Meteor.clientMethods.remaining_players();
-}
-
-
+ return Meteor.globalMethods.remaining_players();
+};
 
 Template.lobby.events({
   'keyup input#myname': function (evt) {

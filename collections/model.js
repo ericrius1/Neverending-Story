@@ -7,25 +7,19 @@ Games = new Meteor.Collection('games');
 Players = new Meteor.Collection('players');
 // {name: 'matt', game_id: 123}
 
-Meteor.globalProperties =  {
+Meteor.globalProperties = {
   minPlayersPerGame: 2
-}
-
-
-Meteor.methods({
-  
-});
-
+};
 
 if (Meteor.isServer) {
   // publish all the players
-  Meteor.publish('players', function () {
+  Meteor.publish('players', function() {
     return Players.find({});
   });
 
   Players.allow({
-    insert: function () {
-      return true ;
+    insert: function() {
+      return true;
     },
 
     update: function() {
@@ -34,11 +28,12 @@ if (Meteor.isServer) {
   });
 
   // publish single games
-  Meteor.publish('games', function (id) {
+  Meteor.publish('games', function(id) {
     check(id, String);
-    return Games.find({_id: id});
+    return Games.find({
+      _id: id
+    });
   });
 
-  
-}
 
+}

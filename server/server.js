@@ -8,6 +8,9 @@ Meteor.startup(function() {
   });
   var handle = query.observeChanges({
     added: function() {
+      if(Meteor.globalMethods.remaining_players() <=0 ){
+        Meteor.call('start_new_game');
+      }
     }
   });
 });
@@ -23,5 +26,4 @@ Meteor.methods({
       {$set: {game_id: game_id}},
       {multi: true});
   }
-
 });
