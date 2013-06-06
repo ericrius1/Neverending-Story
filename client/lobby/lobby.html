@@ -21,7 +21,9 @@
       {{#if looking}}
          <div>At least {{remaining_players}} more needed!</div>
       {{else}}
-        <button id="join_story" class="join_story">Join Story</button>
+        <div id = "name">What's your name?</div>
+        <input id="myname" type="text"/>
+        <button id="join_story" class="join_story"{{{disabled}}}>Join Story</button>
       {{/if}}
     {{/if}}
   </div>

@@ -13,7 +13,7 @@ body {
 /* base styles */
 
 input {
-    height: 50px;
+    height: 60px;
     width: 300px;
     font-size: 2em;
     border: 2px solid black;
@@ -21,7 +21,7 @@ input {
 }
 
 button {
-    position: relative;
+ 
     bottom: 60px;
     margin: 2px;
     height: 50px;
