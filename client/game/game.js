@@ -3,8 +3,9 @@ Template.game.show_game = function() {
   return client.game()!==undefined; 
 }
 
-Template.game.clock = function() {
-  return client.game().clock
+Template.clock.clock = function() {
+  debugger;
+  return client.timer().clock
   
 }
 

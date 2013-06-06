@@ -1,11 +1,9 @@
 <template name = "game">
 
   {{#if show_game}}
-    <div id = "clock">
-      {{clock}}
-    </div>
+    {{> clock}}
     {{#each players}}
-          {{> player }}
+      {{> player }}
     {{/each}}
   {{/if}}
 </template>
@@ -14,4 +12,10 @@
 <template name = "player">
   <div id = "display_name">{{name}}</div>
   <input id = "submission" type = "text" />
+</template>
+
+<template name="clock">
+  <div id = "clock">
+      {{clock}}
+  </div>
 </template>

@@ -59,6 +59,7 @@ Meteor.startup(function() {
 
   Deps.autorun(function() {
     Meteor.subscribe('players');
+    Meteor.subscribe('timers');
 
     if (Session.get('player_id')) {
       var me = client.player();

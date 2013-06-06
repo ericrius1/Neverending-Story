@@ -22,6 +22,7 @@ Meteor.methods({
     console.log("new game started")
     //create a new game
     var game_id = Games.insert({});
+    Timers.insert({_id: game_id})
 
     //Move everyone who declared themselves ready in the lobby into the game
     Players.update({game_id: null, looking:true},
@@ -35,8 +36,8 @@ Meteor.methods({
     //Window down the game clock
     var clock = 30;
     var interval = Meteor.setInterval(function() {
-      clock -=1;
-      Games.update(game_id, {$set: {clock: clock}});
+      clock -= 1;
+      Timers.update(game_id, {$set: {clock: clock}});
     }, 1000);
   }
 });

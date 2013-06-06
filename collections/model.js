@@ -1,11 +1,10 @@
 ////////// Shared code (client and server) //////////
 
 Games = new Meteor.Collection('games');
-//{game_id: 3872, clock: 32}
 
+Timers = new Meteor.Collection('timers');
 
 Players = new Meteor.Collection('players');
-// {name: 'matt', game_id: 123}
 
 if (Meteor.isServer) {
   // publish all the players
@@ -29,6 +28,10 @@ if (Meteor.isServer) {
     return Games.find({
       _id: id
     });
+  });
+
+  Meteor.publish('timers', function(){
+    return Timers.find({});
   });
 
 
