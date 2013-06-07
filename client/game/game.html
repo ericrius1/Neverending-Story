@@ -1,27 +1,27 @@
 <template name = "game">
 
   {{#if show}}
-    {{> clock}}
-    {{>player}}
-    {{#each other_players}}
-      {{> other_player }}
-    {{/each}}
+    <article>      
+      <p>It was midnight in the Howling forest. The wind whistled through the tops of the ancient trees. Suddenly, something enormous crashed and rumbled through the eerie woods.</p>
+    </article>
+
+    <nav class="tabs">
+      <a href="#" class="selected">{{my_name}}</a>
+      <a href="#">Player 2</a>
+      <a href="#">Player 3</a>
+    </nav>
+    <div class="fragment">
+      <textarea class="storyInput"></textarea>
+      <!-- <button class="button">Pick</button> -->
+      <label class="approved"><input type="radio" name="chosenStory"><span></span></label>
+    </div>
+    {{>clock}}
   {{/if}}
 </template>
-
-
-<template name = "player">
-  <div id = "display_name">{{my_name}}</div>
-  <input id = "submission_{{my_name}}" type = "text" />
-  {{#if voting}}
-    <button id = "choose">Choose!</button>
-  {{/if}}
-</template>
-
 
 
 <template name="clock">
-  <div id = "clock">
+  <div class = "clock">
       {{clock}}
   </div>
 </template>

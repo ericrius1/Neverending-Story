@@ -25,7 +25,7 @@
     width: @approved_width;
     height: @approved_height;
 
-    background: url('../images/approved.png') no-repeat;
+    background: url('/images/approved.png') no-repeat;
     background-size: 100% auto;
 
     -webkit-filter: grayscale(100%);
