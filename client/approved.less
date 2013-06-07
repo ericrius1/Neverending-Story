@@ -1,0 +1,40 @@
+
+@approved_width: 3.5rem;
+@approved_height: 2rem;
+
+.approved {
+  display: inline-block;
+  width: @approved_width;
+  height: @approved_height;
+
+  cursor: pointer;
+
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0.0001;
+
+    &:checked + span {
+       -webkit-filter: none;
+       opacity: 1;
+    }
+  }
+
+  span {
+    display: block;
+    content: '';
+    width: @approved_width;
+    height: @approved_height;
+
+    background: url('../images/approved.png') no-repeat;
+    background-size: 100% auto;
+
+    -webkit-filter: grayscale(100%);
+
+    opacity: 0.5;
+  }
+
+  &:hover span {
+    -webkit-filter: grayscale(35%);
+    opacity: 0.75;
+  }
+}

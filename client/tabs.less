@@ -1,0 +1,27 @@
+.tabs {
+  a {
+    display: inline-block;
+
+    margin: 0;
+    padding: 0.25rem 0.75rem;
+
+    background: rgba(158, 80, 21, 0.40);
+
+    border-radius: 0.25rem 0.25rem 0 0;
+    box-shadow: 0 0 0.125rem rgba(0,0,0,0.5);
+
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+    text-shadow: 0 @px rgba(255, 255, 255, 0.25);
+
+    &:hover {
+      background: rgba(158, 80, 21, 0.55);
+    }
+
+    &.selected {
+      background: rgba(101, 48, 11, 0.75);
+    }
+  }
+}
