@@ -16,11 +16,22 @@ Template.player.voting = function(){
   return client.is_voting();
 }
 
+
 Template.other_player.voting = function(){
   return client.is_voting();
 }
 
-Template.other_player.event
+Template.other_player.events({
+  'click button': function(evt) {
+    if(evt.type === "click"){
+      var input_id = "#submission_" + this.name;
+      var text = $(input_id).text();
+    }
+  }
+})
+
+
+Template.other_player.events()
 
 Template.player.player = function(){
   return client.player();

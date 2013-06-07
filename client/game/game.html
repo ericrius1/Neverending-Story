@@ -12,17 +12,17 @@
 
 <template name = "player">
   <div id = "display_name">{{my_name}}</div>
-  <input id = "submission" type = "text" />
+  <input id = "submission_{{my_name}}" type = "text" />
   {{#if voting}}
-    <button id = "Choose!">Vote!</button>
+    <button id = "choose">Choose!</button>
   {{/if}}
 </template>
 
 <template name = "other_player">
   <div id = "display_name">{{name}}</div>
-  <input id = "other_player_submission" type = "text" readonly />
+  <input id = "submission_{{name}}" type = "text" readonly />
   {{#if voting}}
-    <button id = "Choose!">Vote!</button>
+    <button id = "choose">Choose!</button>
   {{/if}}
 </template>
 
