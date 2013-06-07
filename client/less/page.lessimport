@@ -21,13 +21,14 @@
   overflow: auto;
 
   article {
-    font-size: 1rem;
+    font-size: 3rem;
     font-family: @font_cursive;
   }
 
-  .title {
+  #get_name {
     font-size: 1rem;
     font-family: @font_cursive;
+    margin: auto;
   }
 
   .storyInput {
