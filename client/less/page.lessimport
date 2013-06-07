@@ -13,7 +13,7 @@
   padding: 0 2em;
   margin: auto;
 
-  background: url('public/images/paper.jpg');
+  background: url('/images/paper.jpg');
   background-size: 100% auto;
 
   box-shadow: 0 0 2em rgba(0,0,0,0.5);
