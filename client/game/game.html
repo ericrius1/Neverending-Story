@@ -2,17 +2,25 @@
 
   {{#if show}}
     {{> clock}}
-    {{#each players}}
-      {{> player }}
+    {{>player}}
+    {{#each other_players}}
+      {{> other_player }}
     {{/each}}
   {{/if}}
 </template>
 
 
 <template name = "player">
-  <div id = "display_name">{{name}}</div>
-  <input id = "submission" type = "text" disabled />
+  <div id = "display_name">{{my_name}}</div>
+  <input id = "submission" type = "text" />
 </template>
+
+<template name = "other_player">
+  <div id = "display_name">{{name}}</div>
+  <input id = "other_player_submission" type = "text" readonly />
+</template>
+
+
 
 <template name="clock">
   <div id = "clock">

@@ -8,11 +8,14 @@ Template.clock.clock = function() {
   
 }
 
-Template.game.players = function() {
-  debugger;
+Template.game.other_players = function() {
   return client.other_players();
 }
 
 Template.player.player = function(){
   return client.player();
+}
+
+Template.player.my_name = function(){
+  return client.player().name;
 }
