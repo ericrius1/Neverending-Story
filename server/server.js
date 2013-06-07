@@ -32,13 +32,7 @@ Meteor.methods({
     var p = Players.find({game_id: game_id},
                         {fields: {_id: true, name: true}}).fetch();
     Games.update({_id: game_id}, {$set: {players: p}});
-
-    //Window down the game clock
-    var clock = 30;
-    var interval = Meteor.setInterval(function() {
-      clock -= 1;
-      Timers.update(game_id, {$set: {clock: clock}});
-    }, 1000);
+    global.start_new_round(game_id);
+    
   }
 });
-
