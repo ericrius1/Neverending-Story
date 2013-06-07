@@ -1,5 +1,6 @@
 <head>
   <title>StoryTime</title>
+  <link href='http://fonts.googleapis.com/css?family=Gloria+Hallelujah|Just+Me+Again+Down+Here' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -8,7 +9,6 @@
 
 <template name="page">
   <div id="main" class = "page">
-    <div id ="title">StoryTime</div>
     {{> lobby }}
     {{> game}}
   </div>
@@ -21,7 +21,7 @@
       {{#if looking}}
          <div>At least {{remaining_players}} more needed!</div>
       {{else}}
-        <div id = "get_name">What's your name?</div>
+        <div id = "get_name">What is your name?</div>
         <input id="myname" type="text"/>
         <button id="join_story" class="join_story"{{{disabled}}}>Join Story</button>
       {{/if}}

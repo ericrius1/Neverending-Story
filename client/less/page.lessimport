@@ -25,6 +25,11 @@
     font-family: @font_cursive;
   }
 
+  .title {
+    font-size: 1rem;
+    font-family: @font_cursive;
+  }
+
   .storyInput {
     width: 100%;
     height: 12rem;
