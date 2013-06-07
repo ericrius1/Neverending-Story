@@ -3,6 +3,10 @@ Template.game.show = function() {
   return client.game()!==undefined; 
 }
 
+Template.game.voting = function() {
+  return client.game().isVoting;
+}
+
 Template.clock.clock = function() {
   return client.timer().clock
   
