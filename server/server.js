@@ -21,7 +21,7 @@ Meteor.methods({
   start_new_game: function(){
     console.log("new game started")
     //create a new game
-    var game_id = Games.insert({});
+    var game_id = Games.insert({isVoting: false});
     Timers.insert({_id: game_id})
 
     //Move everyone who declared themselves ready in the lobby into the game
