@@ -13,13 +13,16 @@
 <template name = "player">
   <div id = "display_name">{{my_name}}</div>
   <input id = "submission" type = "text" />
+  {{#if voting}}
+    <button id = "Choose!">Vote!</button>
+  {{/if}}
 </template>
 
 <template name = "other_player">
   <div id = "display_name">{{name}}</div>
   <input id = "other_player_submission" type = "text" readonly />
   {{#if voting}}
-    <button id = "vote">Vote!</button>
+    <button id = "Choose!">Vote!</button>
   {{/if}}
 </template>
 

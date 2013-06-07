@@ -12,9 +12,15 @@ Template.game.other_players = function() {
   return client.other_players();
 }
 
+Template.player.voting = function(){
+  return client.is_voting();
+}
+
 Template.other_player.voting = function(){
   return client.is_voting();
 }
+
+Template.other_player.event
 
 Template.player.player = function(){
   return client.player();
