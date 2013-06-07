@@ -1,4 +1,4 @@
-Template.lobby.show_lobby = function() {
+Template.lobby.show = function() {
   // only show lobby if we're not in a game
   return !client.game();
 };

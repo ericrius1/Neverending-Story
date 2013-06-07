@@ -1,6 +1,6 @@
 <template name = "game">
 
-  {{#if show_game}}
+  {{#if show}}
     {{> clock}}
     {{#each players}}
       {{> player }}
@@ -11,7 +11,7 @@
 
 <template name = "player">
   <div id = "display_name">{{name}}</div>
-  <input id = "submission" type = "text" />
+  <input id = "submission" type = "text" disabled />
 </template>
 
 <template name="clock">
