@@ -36,12 +36,3 @@ Template.game.events({
   }
 });
 
-Meteor.startup(function(){
-  //Observe when we enter the voting part of the round
-var query = client.game().find({isVoting: false});
-var voteBeginHandle = query.observeChanges({
-  changed: function(isVoting){
-    debugger;
-  }
-})
-})
