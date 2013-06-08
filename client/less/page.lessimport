@@ -25,10 +25,34 @@
     font-family: @font_cursive;
   }
 
-  #get_name {
-    font-size: 1rem;
+
+  .get_name {
+    font-size: 3em;
     font-family: @font_cursive;
   }
+
+  .nameInput {
+    width: 100%;
+    height: 12rem;
+    display: block;
+    margin: 0 0 2rem 0;
+
+    border: none;
+    border-radius: 0.25rem;
+    box-shadow: inset 0.125rem 0.125rem 0.5rem rgba(121,70,39,0.5);
+
+    background: none;
+
+    font-size: 3rem;
+    font-family: @font_cursive;
+
+    &:focus {
+      outline: none;
+
+      box-shadow: inset 0.125rem 0.125rem 0.5rem rgba(121,70,39,0.75);
+    }
+  }
+
 
   .clock {
     text-align: center;  }
