@@ -15,6 +15,7 @@ Template.game.me = function(){
 }
 
 Template.game.submission = function(){
+  if(!client.is_voting()) return "";
   var selectedPlayerId = Session.get('game.activeTab');
   return client.selected_player_submission(selectedPlayerId);
 }

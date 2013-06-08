@@ -12,7 +12,7 @@
     </nav>
     <div class="fragment_input">
       {{#if me}}
-        <textarea class="storyInput"></textarea>
+        <textarea class="storyInput">{{submission}}</textarea>
       {{else}}
         {{#if voting}}
          <textarea class="storyInput" readonly>{{submission}}</textarea>
