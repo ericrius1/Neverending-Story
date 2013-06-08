@@ -6,20 +6,22 @@
     </article>
 
     <nav class="tabs">
-      <a href="#" class="selected">{{my_name}}</a>
-      <a href="#">Player 2</a>
-      <a href="#">Player 3</a>
+      {{#each players}}
+        <a data-player-id="{{_id}}" href="#">{{name}}</a>
+      {{/each}}
     </nav>
     <div class="fragment">
-      <textarea class="storyInput"></textarea>
+      {{#if me}}
+        <textarea class="storyInput"></textarea>
+      {{else}}
+        <textarea class="storyInput" readonly>other player text</textarea>
+      {{/if}}
       <!-- <button class="button">Pick</button> -->
       <label class="approved"><input type="radio" name="chosenStory"><span></span></label>
     </div>
     {{>clock}}
   {{/if}}
 </template>
-
-
 <template name="clock">
   <div class = "clock">
       {{clock}}

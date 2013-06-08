@@ -31,8 +31,7 @@
   }
 
   .clock {
-    margin: auto;
-  }
+    text-align: center;  }
 
   .storyInput {
     width: 100%;

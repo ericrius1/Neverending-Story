@@ -56,6 +56,7 @@ Meteor.startup(function() {
     name: ''
   });
   Session.set('player_id', player_id);
+  Session.set('game.activeTab', Session.get('player_id'));
 
   Deps.autorun(function() {
     Meteor.subscribe('players');
