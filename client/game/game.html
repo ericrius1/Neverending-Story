@@ -11,15 +11,13 @@
       {{/each}}
     </nav>
     <div class="fragment_input">
-      {{#if me}}
-        <textarea class="storyInput">{{submission}}</textarea>
-      {{else}}
+      <textarea class="storyInput">{{submission}}</textarea>
         {{#if voting}}
-         <textarea class="storyInput" readonly>{{submission}}</textarea>
+          <label class="approved"><input type="radio" name="chosenStory"><span></span></label>
+          <div id = "voting_instructions">Click the approve button for the submission you like the best!
+                                          The submission with the most votes will be incorporated into the story!
+          </div>
         {{/if}}
-      {{/if}}
-      <!-- <button class="button">Pick</button> -->
-      <label class="approved"><input type="radio" name="chosenStory"><span></span></label>
     </div>
     {{>clock}}
   {{/if}}

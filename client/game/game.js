@@ -8,14 +8,14 @@ Template.game.my_name = function(){
 }
 
 Template.game.me = function(){
-  if(Session.get('game.activeTab') ===client.player()._id ){
+  if(Session.get('game.activeTab') === client.player()._id ){
     return true;
   }
   return false;
 }
 
 Template.game.submission = function(){
-  if(!client.is_voting()) return "";
+  if(!client.is_voting())return "";
   var selectedPlayerId = Session.get('game.activeTab');
   return client.selected_player_submission(selectedPlayerId);
 }
