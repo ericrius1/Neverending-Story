@@ -1,5 +1,4 @@
 Template.game.show = function() {
-  console.log(client.game()!==undefined);
   return client.game()!==undefined; 
 }
 
