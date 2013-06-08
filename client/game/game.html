@@ -14,7 +14,9 @@
       {{#if me}}
         <textarea class="storyInput"></textarea>
       {{else}}
-        <textarea class="storyInput" readonly>other text</textarea>
+        {{#if voting}}
+         <textarea class="storyInput" readonly>{{submission}}</textarea>
+        {{/if}}
       {{/if}}
       <!-- <button class="button">Pick</button> -->
       <label class="approved"><input type="radio" name="chosenStory"><span></span></label>

@@ -14,6 +14,15 @@ Template.game.me = function(){
   return false;
 }
 
+Template.game.submission = function(){
+  var selectedPlayerId = Session.get('game.activeTab');
+  return client.selected_player_submission(selectedPlayerId);
+}
+
+Template.game.voting = function() {
+  return client.is_voting();
+}
+
 
 Template.clock.clock = function() {
   return client.timer().clock
