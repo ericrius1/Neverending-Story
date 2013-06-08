@@ -41,11 +41,6 @@ Template.lobby.events({
   }
 });
 
-Deps.autorun(function(){
-   console.log(Session.get("isVoting"));
-
-})
-
 
 //////
 ////// Initialization
@@ -73,8 +68,7 @@ Meteor.startup(function() {
       if (me && me.game_id) {
         Meteor.subscribe('games', me.game_id);
         if(client.game() && client.game().isVoting === true){
-          console.log("voting!");
-          client.save_submissions();
+          client.save_submission();
         }
       }
     }

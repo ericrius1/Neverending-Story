@@ -2,6 +2,7 @@ Template.game.show = function() {
   return client.game()!==undefined; 
 }
 
+
 Template.game.my_name = function(){
   return client.player().name;
 }
@@ -12,7 +13,6 @@ Template.game.me = function(){
   }
   return false;
 }
-
 
 
 Template.clock.clock = function() {

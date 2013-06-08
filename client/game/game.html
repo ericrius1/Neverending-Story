@@ -10,11 +10,11 @@
         <a data-player-id="{{_id}}" href="#">{{name}}</a>
       {{/each}}
     </nav>
-    <div class="fragment">
+    <div class="fragment_input">
       {{#if me}}
         <textarea class="storyInput"></textarea>
       {{else}}
-        <textarea class="storyInput" readonly>other player text</textarea>
+        <textarea class="storyInput" readonly>other text</textarea>
       {{/if}}
       <!-- <button class="button">Pick</button> -->
       <label class="approved"><input type="radio" name="chosenStory"><span></span></label>
@@ -22,6 +22,7 @@
     {{>clock}}
   {{/if}}
 </template>
+
 <template name="clock">
   <div class = "clock">
       {{clock}}
