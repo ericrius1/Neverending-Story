@@ -17,3 +17,8 @@ Also how to keep track of it- right now seems janky if I stress test lots of pla
 
 
 Might need to put in collection
+
+
+TODO:
+get vote button in text box and grayed when not on voted one
+CSS fade in, fade out

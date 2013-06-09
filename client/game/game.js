@@ -28,6 +28,7 @@ Template.game.submission = function(){
   return client.selected_player_submission(selectedPlayerId);
 }
 
+
 Template.game.selected= function(){
   //returns selected if the current tab is our active tab otherwise our own tab is active
   if(!client.is_voting()){

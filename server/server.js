@@ -71,5 +71,19 @@ Meteor.methods({
     });
     global.start_new_round(game_id);
 
+  },
+
+  keepalive: function (player_id) {
+    check(player_id, String);
+    Players.update({_id: player_id},
+                   {$set: {last_keepalive: (new Date()).getTime()}});
+
   }
 });
+
+// Meteor.setInterval(function () {
+//   var now = (new Date()).getTime();
+//   var remove_threshold = now - 5*1000;
+//   //Players.remove({$lt : {last_keepalive: remove_threshold}});
+
+// }, 100 * 1000);

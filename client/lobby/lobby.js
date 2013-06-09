@@ -16,7 +16,7 @@ Template.lobby.remaining_players = function() {
   return global.remaining_players();
 };
 
-Template.lobby.can_begin = function(){
+Template.lobby.can_begin = function() {
   return client.can_begin();
 };
 
@@ -40,7 +40,7 @@ Template.lobby.events({
     client.player_join();
   },
 
-  'click button.start_story': function(){
+  'click button.start_story': function() {
     Meteor.call('start_new_game');
   }
 });
@@ -58,7 +58,8 @@ Meteor.startup(function() {
   // a pre-existing player, and if it exists, make sure the server still
   // knows about us.
   var player_id = Players.insert({
-    name: '', submission: ''
+    name: '',
+    submission: ''
   });
   Session.set('player_id', player_id);
   Session.set('game.activeTab', Session.get('player_id'));
@@ -71,16 +72,16 @@ Meteor.startup(function() {
       var me = client.player();
       if (me && me.game_id) {
         Meteor.subscribe('games', me.game_id);
-        if(client.game() && client.game().isVoting === true){
+        if (client.game() && client.game().isVoting === true) {
           client.save_submission();
         }
         Meteor.subscribe('stories', me.game_id);
       }
     }
-
-   
   });
-
-
+  // Meteor.setInterval(function() {
+  //   if (Meteor.status().connected)
+  //     Meteor.call('keepalive', Session.get('player_id'));
+  // }, 1000);
 
 });
