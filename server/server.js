@@ -12,20 +12,9 @@ Meteor.startup(function() {
 
       //Start timer if at least two players are looking for a game
       if (global.num_players_looking() >= 2) {
-        globalProperties.lobbyInterval = Meteor.setInterval(function() {
-          globalProperties.currentLobbyWaitingTime -= 1;
-          console.log(globalProperties.currentLobbyWaitingTime);
-          //end of round
-          if (globalProperties.currentLobbyWaitingTime === 0) {
-            globalProperties.currentLobbyWaitingTime = globalProperties.lobbyWaitingTime;
-            Meteor.call('start_new_game');
-
-          }
-        }, 1000);
+       
       }
       if (global.remaining_players() <= 0) {
-       
-        
         Meteor.call('start_new_game');
       }
     }
@@ -34,10 +23,7 @@ Meteor.startup(function() {
 
 Meteor.methods({
   start_new_game: function() {
-    globalProperties.currentLobbyWaitingTime = globalProperties.lobbyWaitingTime;
-    if(globalProperties.lobbyInterval!==null) {
-      Meteor.clearInterval(globalProperties.lobbyInterval);
-    }
+    var numPrompts = Object.keys(starting_prompts).length;
     console.log("new game started")
     //create a new game
     var game_id = Games.insert({
@@ -49,7 +35,7 @@ Meteor.methods({
     //link a story to a game
     Stories.insert({
       _id: game_id,
-      content: starting_prompts[1]
+      content: starting_prompts[Math.floor(Math.random() * numPrompts)]
     });
 
     //Move everyone who declared themselves ready in the lobby into the game
