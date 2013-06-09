@@ -22,13 +22,20 @@
 
   article {
     font-size: 1rem;
-    font-family: @font_cursive;
+    font-family: @font_cursive, helvetica;
   }
 
 
   .get_name {
     font-size: 3em;
-    font-family: @font_cursive;
+    font-family: @font_cursive, helvetica;
+  }
+
+  #waiting {
+    font-size: 3em;
+    font-family: @font_handwriting, helvetica;
+    text-align: center;
+
   }
 
   .nameInput {
@@ -56,7 +63,7 @@
 
   .clock {
     text-align: center; 
-    font-family: @font_handwriting;
+    font-family: @font_handwriting, helvetica;
     font-size: 4em;
     color: red;
   }
@@ -74,7 +81,7 @@
     background: none;
 
     font-size: 1rem;
-    font-family: @font_cursive;
+    font-family: @font_cursive, helvetica;
 
     &:focus {
       outline: none;
