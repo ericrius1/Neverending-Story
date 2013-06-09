@@ -8,10 +8,21 @@ Meteor.startup(function() {
   });
   var handle = query.observeChanges({
     added: function() {
-      debugger;
+
+         //Start timer if a player joins
+      var clock = globalProperties.lobbyWaitingTime;
+      var interval = Meteor.setInterval(function() {
+        clock -= 1;
+        //end of round
+        if(clock === 0){
+          //stop the clock
+          Meteor.clearInterval(interval);
+          Meteor.call('_start_new_game');
+        }
+      }, 1000);
+   
       if(global.remaining_players() <=0 ){
-        console.log('new game')
-        Meteor.call('start_new_game');
+          Meteor.call('start_new_game');
       }
     }
   });
