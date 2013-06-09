@@ -1,6 +1,6 @@
 
-@approved_width: 3.5rem;
-@approved_height: 2rem;
+@approved_width: 7rem;
+@approved_height: 4rem;
 
 .approved {
   display: inline-block;
