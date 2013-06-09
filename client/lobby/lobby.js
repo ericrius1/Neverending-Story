@@ -38,6 +38,10 @@ Template.lobby.events({
   },
   'click button.join_story': function() {
     client.player_join();
+  },
+
+  'click button.start_story': function(){
+    Meteor.call('start_new_game');
   }
 });
 
