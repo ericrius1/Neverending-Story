@@ -4,25 +4,12 @@
 
 Meteor.startup(function() {
   Players.update({}, {looking: false})
-  var query = Players.find({
-    looking: true
-  });
-  var handle = query.observeChanges({
-    added: function() {
-
-      //Start timer if at least two players are looking for a game
-      if (global.num_players_looking() >= 2) {
-       
-      }
-      if (global.remaining_players() <= 0) {
-        Meteor.call('start_new_game');
-      }
-    }
-  });
+  observe.observe_players_looking();
 });
 
 Meteor.methods({
   start_new_game: function() {
+
     var numPrompts = Object.keys(starting_prompts).length;
     console.log("new game started")
     //create a new game
@@ -30,6 +17,7 @@ Meteor.methods({
       isVoting: false,
       round: 1
     });
+    observe.observe_votes(game_id);
     Timers.insert({
       _id: game_id
     })
@@ -47,7 +35,8 @@ Meteor.methods({
       $set: {
         game_id: game_id,
         looking: false,
-        votes: 0
+        votes: 0,
+        hasVoted: false
       }
     }, {
       multi: true

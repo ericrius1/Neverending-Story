@@ -38,7 +38,6 @@ Template.game.selected= function(){
 
 Template.game.readonly = function(){
   //returns readonly if we are in voting round or selected tab is not our own
-  console.log("Now i am deciding readonly");
   return client.is_voting() || Session.get('game.activeTab') !== client.player()._id ? "readonly" : "";
 }
 
@@ -61,7 +60,7 @@ Template.game.getActiveTab = function() {
 
 Template.game.events({
   'click nav.tabs > a': function(evt) {
-    //if(!client.is_voting())return;
+    if(!client.is_voting())return;
     var id = $(evt.target).data('playerId');
     Session.set('game.activeTab', id);
     $(evt.target).attr('selected', 'selected');
@@ -69,7 +68,8 @@ Template.game.events({
 
   'click label.approved': function(evt){
     var id = Session.get('game.activeTab');
-    Players.update(id, {$inc: {votes: 1}})
+    Players.update({_id: id}, {$inc: {votes: 1}, $set: {hasVoted: true}});
+    //Players.update({_id: id}, {$set: {hasVoted: true}});
   }
 });
 
