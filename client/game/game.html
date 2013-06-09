@@ -14,9 +14,11 @@
       <textarea class="storyInput">{{submission}}</textarea>
         {{#if voting}}
           <label class="approved"><input type="radio" name="chosenStory"><span></span></label>
-          <div id = "voting_instructions">Click the approve button for the submission you like the best!
+          <div id = "game_instructions">Click the approve button for the submission you like the best!
                                           The submission with the most votes will be incorporated into the story!
           </div>
+        {{else}}
+        <div id = "game_instructions">Write your addition to the story in the parchment space above!</div>
         {{/if}}
     </div>
     {{>clock}}
