@@ -55,7 +55,11 @@
 
 
   .clock {
-    text-align: center;  }
+    text-align: center; 
+    font-family: @font_handwriting;
+    font-size: 4em;
+    color: red;
+  }
 
   .storyInput {
     width: 100%;
