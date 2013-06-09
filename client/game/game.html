@@ -2,7 +2,7 @@
 
   {{#if show}}
     <article>      
-      <p>It was midnight in the Howling forest. The wind whistled through the tops of the ancient trees. Suddenly, something enormous crashed and rumbled through the eerie woods.</p>
+      {{>story}}
     </article>
 
     <nav class="tabs">
@@ -27,4 +27,10 @@
   <div class = "clock">
       {{clock}}
   </div>
+</template>
+
+<template name = "story">
+  <article>
+    this is a story
+  </article>
 </template>
