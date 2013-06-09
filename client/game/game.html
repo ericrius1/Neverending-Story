@@ -11,7 +11,7 @@
       {{/each}}
     </nav>
     <div class="fragment_input">
-      <textarea class="storyInput">{{submission}}</textarea>
+      <textarea class="storyInput" {{readonly}}>{{submission}}</textarea>
         {{#if voting}}
           <label class="approved"><input type="radio" name="chosenStory"><span></span></label>
           <div id = "game_instructions">Click the approve button for the submission you like the best!
