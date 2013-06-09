@@ -1,0 +1,4 @@
+#game_instructions {
+    font-size: 3rem;
+    font-family: @font_handwriting;
+}

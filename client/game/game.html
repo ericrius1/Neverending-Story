@@ -11,10 +11,11 @@
         <a data-player-id="{{_id}}" href="#" class={{selected}}>{{name}}</a>
       {{/each}}
     </nav>
-    <div class="fragment_input">
-       <textarea class="storyInput" {{readonly}}>{{submission}}</textarea>
+    <div class="fragment">
+       <textarea class="storyInput"  {{readonly}}>{{submission}}</textarea>
         {{#if voting}}
           <label class="approved"><input type="radio" name="chosenStory"><span></span></label>
+    </div>
           <div id = "game_instructions">Click the approve button for the submission you like the best!
                                           The submission with the most votes will be incorporated into the story!
           </div>
