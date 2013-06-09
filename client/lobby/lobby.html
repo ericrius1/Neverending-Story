@@ -20,7 +20,9 @@
     <div id="lobby">
       {{#if looking}}
          <div id = 'waiting'>At least {{remaining_players}} more needed!</div>
-          {{>timer}}
+        {{#if can_begin}}
+          <button id="start_story" class="start_story">Start Story</button>   
+        {{/if}} 
       {{else}}
       <div class ="get_name">
         <div>Enter your name and click the join story button to begin!</div>

@@ -16,9 +16,9 @@ Template.lobby.remaining_players = function() {
   return global.remaining_players();
 };
 
-Template.timer.time = function() {
-  return globalProperties.currentLobbyWaitingTime;
-}
+Template.lobby.can_begin = function(){
+  return client.can_begin();
+};
 
 Template.lobby.disabled = function() {
   var me = client.player();
