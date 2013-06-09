@@ -55,7 +55,6 @@ Template.game.events({
 
   'click label.approved': function(evt){
     var id = Session.get('game.activeTab');
-    debugger;
     Players.update(id, {$inc: {votes: 1}})
   }
 });

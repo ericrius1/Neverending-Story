@@ -54,7 +54,7 @@ Meteor.startup(function() {
   // a pre-existing player, and if it exists, make sure the server still
   // knows about us.
   var player_id = Players.insert({
-    name: ''
+    name: '', submission: ''
   });
   Session.set('player_id', player_id);
   Session.set('game.activeTab', Session.get('player_id'));
