@@ -2,6 +2,10 @@ Template.game.show = function() {
   return client.game()!==undefined; 
 }
 
+Template.game.track_round = function() {
+  client.track_round();
+}
+
 Template.story.content = function(){
   return client.story_content();
 }

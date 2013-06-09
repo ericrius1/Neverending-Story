@@ -27,7 +27,8 @@ Meteor.methods({
     console.log("new game started")
     //create a new game
     var game_id = Games.insert({
-      isVoting: false
+      isVoting: false,
+      round: 1
     });
     Timers.insert({
       _id: game_id
