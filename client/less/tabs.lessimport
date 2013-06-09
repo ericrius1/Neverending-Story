@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0.25rem 0.75rem;
 
-    background: rgba(158, 80, 21, 0.40);
+    background: rgba(101, 48, 11, 0.75);
 
     border-radius: 0.25rem 0.25rem 0 0;
     box-shadow: 0 0 0.125rem rgba(0,0,0,0.5);
@@ -21,7 +21,8 @@
     }
 
     &.selected {
-      background: rgba(101, 48, 11, 0.75);
+
+      background: rgba(158, 80, 21, 0.40);
     }
   }
 }

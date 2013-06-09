@@ -3,6 +3,7 @@
 
 
 Meteor.startup(function() {
+  Players.update({}, {looking: false})
   var query = Players.find({
     looking: true
   });
