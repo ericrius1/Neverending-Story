@@ -70,6 +70,7 @@ Meteor.startup(function() {
         if(client.game() && client.game().isVoting === true){
           client.save_submission();
         }
+        Meteor.subscribe('stories', me.game_id);
       }
     }
 

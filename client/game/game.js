@@ -2,6 +2,10 @@ Template.game.show = function() {
   return client.game()!==undefined; 
 }
 
+Template.story.content = function(){
+  return client.story_content();
+}
+
 
 Template.game.my_name = function(){
   return client.player().name;
