@@ -11,3 +11,7 @@ Show alert tab when another player has joined and the game has started!
 
 
 What is best way to show lobby timer if it is just a global variable? Should we put in in a collection or do it some other way?
+
+
+
+Might need to put in collection

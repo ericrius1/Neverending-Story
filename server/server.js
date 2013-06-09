@@ -11,7 +11,7 @@ Meteor.startup(function() {
 
       //Start timer if at least two players are looking for a game
       if (global.num_players_looking() >= 2) {
-        global.lobbyInterval = Meteor.setInterval(function() {
+        globalProperties.lobbyInterval = Meteor.setInterval(function() {
           globalProperties.currentLobbyWaitingTime -= 1;
           console.log(globalProperties.currentLobbyWaitingTime);
           //end of round
@@ -24,7 +24,7 @@ Meteor.startup(function() {
       }
       if (global.remaining_players() <= 0) {
        
-        globalProperties.currentLobbyWaitingTime = globalProperties.lobbyWaitingTime;
+        
         Meteor.call('start_new_game');
       }
     }
@@ -33,7 +33,10 @@ Meteor.startup(function() {
 
 Meteor.methods({
   start_new_game: function() {
-    if(global.lobbyInterval!==null) global.lobbyInterval.clearInterval
+    globalProperties.currentLobbyWaitingTime = globalProperties.lobbyWaitingTime;
+    if(globalProperties.lobbyInterval!==null) {
+      Meteor.clearInterval(globalProperties.lobbyInterval);
+    }
     console.log("new game started")
     //create a new game
     var game_id = Games.insert({
