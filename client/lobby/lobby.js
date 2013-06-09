@@ -37,11 +37,7 @@ Template.lobby.events({
     });
   },
   'click button.join_story': function() {
-    Players.update(Session.get('player_id'), {
-      $set: {
-        looking: true
-      }
-    })
+    client.player_join();
   }
 });
 
