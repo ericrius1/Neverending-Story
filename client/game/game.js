@@ -47,6 +47,12 @@ Template.game.events({
     var id = $(evt.target).data('playerId');
     Session.set('game.activeTab', id);
     $(evt.target).attr('selected', 'selected');
+  },
+
+  'click label.approved': function(evt){
+    var id = Session.get('game.activeTab');
+    debugger;
+    Players.update(id, {$inc: {votes: 1}})
   }
 });
 
