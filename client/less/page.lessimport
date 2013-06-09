@@ -27,7 +27,7 @@
 
 
   .get_name {
-    font-size: 3em;
+    font-size: 2em;
     font-family: @font_cursive, helvetica;
   }
 
@@ -81,7 +81,7 @@
     background: none;
 
     font-size: 1.5rem;
-    font-family: helvetica;
+    font-family:f helvetica;
 
     &:focus {
       outline: none;
@@ -89,4 +89,6 @@
       box-shadow: inset 0.125rem 0.125rem 0.5rem rgba(221,20,111,0.75);
     }
   }
+
+  
 }
