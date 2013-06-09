@@ -23,11 +23,14 @@ Meteor.methods({
     //create a new game
     var game_id = Games.insert({isVoting: false});
     Timers.insert({_id: game_id})
+    //link a story to a game
+    Stories.insert({_id: game_id, content: starting_prompts[1]});
 
     //Move everyone who declared themselves ready in the lobby into the game
     Players.update({game_id: null, looking:true},
-      {$set: {game_id: game_id, looking: false}},
+      {$set: {game_id: game_id, looking: false, votes: 0}},
       {multi: true});
+
 
     var p = Players.find({game_id: game_id},
                         {fields: {_id: true, name: true}}).fetch();

@@ -2,9 +2,14 @@
 
 Games = new Meteor.Collection('games');
 
+Stories = new Meteor.Collection('stories');
+//Each game has a story
+
 Timers = new Meteor.Collection('timers');
+//Each game has a timer
 
 Players = new Meteor.Collection('players');
+//Each game has multiple players
 
 if (Meteor.isServer) {
   // publish all the players
@@ -33,6 +38,10 @@ if (Meteor.isServer) {
   Meteor.publish('timers', function(){
     return Timers.find({});
   });
+
+  Meteor.publish('stories', function(){
+    return Stories.find({});
+  })
 
 
 }
