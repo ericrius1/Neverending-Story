@@ -5,13 +5,11 @@
 
 
 .page {
-  width: 80%;
-  height: 100%;
+  width: 100%;
 
   box-sizing: border-box;
 
-  padding: 0 2em;
-  margin: auto;
+  padding: 0;
 
   background: url('/images/paper.jpg');
   background-size: 100% auto;
@@ -20,9 +18,19 @@
 
   overflow: auto;
 
+  &.storyContent {
+    margin-top: 2rem;
+  }
+
   article {
     font-size: 1.5rem;
     font-family: @font_cursive, helvetica;
+  
+    margin: 0 2rem;
+
+    p {
+      margin: 1rem 0;
+    }
   }
 
 
@@ -35,7 +43,6 @@
     font-size: 3em;
     font-family: @font_handwriting, helvetica;
     text-align: center;
-
   }
 
   .nameInput {
@@ -70,25 +77,25 @@
 
   .storyInput {
     width: 100%;
+    max-width: 100%;
     height: 12rem;
     display: block;
-    margin: 0 0 2rem 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 1rem 2rem;
 
     border: none;
     border-radius: 0.25rem;
-    box-shadow: inset 0.125rem 0.125rem 0.5rem rgba(188,22,111,0.5);
 
     background: none;
 
     font-size: 1.5rem;
-    font-family: helvetica;
+    font-family: @font_cursive;
 
     &:focus {
       outline: none;
 
-      box-shadow: inset 0.125rem 0.125rem 0.5rem rgba(221,20,111,0.75);
+      box-shadow: -0.125rem -0.125rem 0.5rem rgba(0,0,0,0.75);
     }
   }
-
-  
 }

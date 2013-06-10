@@ -57,13 +57,6 @@ var Timer;
       
     }());
     
-    $(function() {
-      var timer = new Timer({
-        el: $('#watch'),
-        time: 60
-      });
-      timer.start();
-    });
   Template.stopwatch.start = function(){
      var timer = new Timer({
         el: $('#watch'),

@@ -1,39 +1,49 @@
 .stopwatch {
-      position: relative;
-      
-      width: 628px;
-      height: 767px;
+  position: relative;
+  z-index: 1;
+  
+  width: 157px;
+  height: 191.75px;
 
-      background-image: url('/images/stopwatch.png');
-      background-size: 100% auto;
-    }
-    
-    .hand {
-      position: absolute;
-      top: 215px;
-      left: 295px;
-      
-      width: 43px;
-      height: 351px;
-      
-      background-image: url('/images/hand.png');
-      background-size: 100% auto;
-      
-      -webkit-transform: rotate(0deg);
-      -webkit-transform-origin: 21px 232px;
-    }
-    
-    .overlay {
-      position: absolute;
-      
-      left: 65px;
-      top: 198px;
-      z-index: 1;
-      width: 502px;
-      height: 502px;
-      border-radius: 502px;
-      
-      background: red;
-      
-      opacity: 0;
-    }
+  background-image: url('/images/stopwatch.png');
+  background-size: 100% auto;
+
+  // -webkit-filter: hue-rotate(-50deg);
+  -webkit-filter: brightness(80%); 
+}
+
+.hand {
+  position: absolute;
+  top: 53.75px;
+  left: 73.75px;
+  
+  width: 10.75px;
+  height: 87.75px;
+  
+  background-image: url('/images/hand.png');
+  background-size: 100% auto;
+  
+  -webkit-transform: rotate(0deg);
+  -webkit-transform-origin: 5.25px 58px;
+}
+
+.overlay {
+  position: absolute;
+  
+  left: 16.25px;
+  top: 49.5px;
+  z-index: 1;
+  width: 125.5px;
+  height: 125.5px;
+  border-radius: 125.5px;
+  
+  background: red;
+  
+  opacity: 0;
+}
+
+.stopwatch_container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+}

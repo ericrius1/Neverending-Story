@@ -1,41 +1,47 @@
-<template name = "game">
+<template name="game">
 
   {{#if show}}
     {{setup_round}}
-    <article>
-      {{>story}}
-    </article>
+    {{#unless voting}}
+      {{>stopwatch}}
+    {{/unless}}
+    <div class="container">
+      
+      <div class="page storyContent">
+          {{>story}}
+      </div>
 
-    <nav class="tabs">
-      {{#each players}}
-        <a data-player-id="{{_id}}" href="#" class={{selected}}>{{name}}</a>
-      {{/each}}
-    </nav>
-    <div class="fragment">
-       <textarea id = "storyInput" class="storyInput"  {{readonly}}>{{submission}}</textarea>
-        {{#if voting}}
-          <label class="approved"><input type="radio" name="chosenStory"><span></span></label>
-    </div>
-          <div id = "game_instructions">Click the approve button for the submission you like the best!
-                                          The submission with the most votes will be incorporated into the story!
-          </div>
-        {{else}}
-          <div id = "game_instructions">Write your addition to the story in the parchment space above!</div>
-          {{>stopwatch}}
-          {{>clock}}
-        {{/if}}
+      <nav class="tabs">
+        {{#each players}}
+          <a data-player-id="{{_id}}" href="#" class={{selected}}>{{name}}</a>
+        {{/each}}
+      </nav>
+      <div class="page">
+        <div class="fragment">
+           <textarea id="storyInput" class="storyInput"  {{readonly}}>{{submission}}</textarea>
+            {{#if voting}}
+              <label class="approved"><input type="radio" name="chosenStory"><span></span></label>
+        </div>
+              <div id="game_instructions">Click the approve button for the submission you like the best!
+                                              The submission with the most votes will be incorporated into the story!
+              </div>
+            {{else}}
+              {{>clock}}
+            {{/if}}
+        </div>
+
     </div>
   {{/if}}
 </template>
 
 <template name="clock">
-  <div class = "clock">
+  <div class="clock">
       {{clock}}
   </div>
 </template>
 
-<template name = "story">
+<template name="story">
   <article>
-    {{content}}
+    <p>{{content}}</p>
   </article>
 </template>

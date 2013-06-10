@@ -4,6 +4,6 @@
   .approved {
     position: absolute;
     bottom: 0.25rem;
-    right: 0;
+    right: 0.25rem;
   }
 }
