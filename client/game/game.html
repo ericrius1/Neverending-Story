@@ -22,12 +22,13 @@
             {{#if voting}}
               <label class="approved"><input type="radio" name="chosenStory"><span></span></label>
         </div>
-              <div id="game_instructions">Click the approve button for the submission you like the best!
+              <div class="game_instructions">Click the approve button for the submission you like the best!
                                               The submission with the most votes will be incorporated into the story!
               </div>
             {{else}}
               {{>clock}}
             {{/if}}
+            <div class="game_instructions"> Round {{current_round}} of {{total_rounds}}</div>
         </div>
 
     </div>

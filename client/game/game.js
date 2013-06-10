@@ -52,6 +52,15 @@ Template.game.players = function() {
   return client.all_players();
 }
 
+Template.game.current_round = function(){
+  return client.current_round();
+
+}
+
+Template.game.total_rounds = function(){
+  return client.total_rounds();
+}
+
 Template.game.getActiveTab = function() {
   return Session.get('game.activeTab');
 }

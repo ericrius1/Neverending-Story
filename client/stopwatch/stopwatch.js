@@ -30,8 +30,8 @@ var hasStarted = false;
         this.$hand.css('-webkit-transform', 'rotate('+rotation+'deg)');
         
         // Shade the overlay
-        if (timePct > 0.80) {
-          var overlayOpacity = timePct - 0.5;
+        if (timePct > 0.75) {
+          var overlayOpacity = timePct - 0.75;
           
           this.$overlay.animate({
             opacity: overlayOpacity
