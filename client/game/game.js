@@ -70,6 +70,11 @@ Template.game.events({
     var id = Session.get('game.activeTab');
     Players.update({_id: id}, {$inc: {votes: 1}, $set: {hasVoted: true}});
     //Players.update({_id: id}, {$set: {hasVoted: true}});
+  },
+
+  'keyup input#storyInput': function(evt){
+    var submission = $('#storyInput').val();
+    Players.update({_id: Session.get('player_id')}, {submission: submission});
   }
 });
 

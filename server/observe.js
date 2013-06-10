@@ -23,6 +23,6 @@ observe = {
           global.setup_new_round(game_id);
         }
       }
-    })
+    });
   }
 }
