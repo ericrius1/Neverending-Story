@@ -19,19 +19,21 @@
   <div>
     {{#if show}}
     <div id="lobby">
-      {{#if looking}}
-         <div id = 'waiting'>We have room for {{remaining_players}} more!</div>
-        {{#if can_begin}}
-          <button id="start_story" class="start_story">Start Story</button>   
-        {{/if}} 
-      {{else}}
-      <div class ="get_name">
-        <div>Enter your name and click the join story button to begin!</div>
-        <input id="myname" class = 'nameInput' type="text"/>
-        <button id="join_story" class="join_story"{{{disabled}}}>Join Story</button>
-      </div>
+      <div class = "page">
+        {{#if looking}}
+           <div id = 'waiting'>We have room for {{remaining_players}} more!</div>
+          {{#if can_begin}}
+            <button id="start_story" class="start_story">Start Story</button>   
+          {{/if}} 
+        {{else}}
+        <div class ="get_name">
+          <div>Enter your name and click the join story button to begin!</div>
+          <input id="myname" class = 'storyInput' type="text"/>
+          <button id="join_story" class="join_story"{{{disabled}}}>Join Story</button>
+        </div>
+        {{/if}}
       {{/if}}
-    {{/if}}
+    </div>
   </div>
 </template>
 

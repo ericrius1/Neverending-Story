@@ -1,4 +1,5 @@
 var Timer;
+var hasStarted = false;
     (function() {
       var marks = 300;
       var degreesPerMark = 360/300;
@@ -56,12 +57,19 @@ var Timer;
       };
       
     }());
-    
+  
   Template.stopwatch.start = function(){
-     var timer = new Timer({
+    if(hasStarted){
+      return;
+    }
+    //we have added element to dom
+    if($('#watch').length > 0){
+      hasStarted = true;
+       var timer = new Timer({
         el: $('#watch'),
         time: 60
       });
       timer.start();
-      console.log("start");
+    }
+    
   }
