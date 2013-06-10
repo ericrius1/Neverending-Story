@@ -23,9 +23,11 @@ Meteor.methods({
       _id: game_id
     })
     //link a story to a game
+    var prompt = starting_prompts[Math.floor(Math.random() * numPrompts)];
     Stories.insert({
       _id: game_id,
-      content: starting_prompts[Math.floor(Math.random() * numPrompts)]
+      prompt: prompt,
+      content: prompt
     });
 
     //Move everyone who declared themselves ready in the lobby into the game
