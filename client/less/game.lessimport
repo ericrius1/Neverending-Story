@@ -2,3 +2,9 @@
     font-size: 3rem;
     font-family: @font_handwriting;
 }
+
+.notification {
+    font-size: 3rem;
+    font-family: @font_handwriting;
+    color: purple;
+}

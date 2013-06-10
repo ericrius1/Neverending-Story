@@ -1,5 +1,5 @@
 Template.game.show = function() {
-  return client.game()!==undefined; 
+  return client.game()!==undefined && !client.game().gameOver; 
 }
 
 Template.game.setup_round = function() {
