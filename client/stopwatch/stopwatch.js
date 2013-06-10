@@ -63,11 +63,11 @@ var hasStarted = false;
       return;
     }
     //we have added element to dom
-    if($('#watch').length > 0){
+    if($('#watch').length > 0 &&  client.timer().clock){
       hasStarted = true;
        var timer = new Timer({
         el: $('#watch'),
-        time: 60
+        time: client.timer().clock
       });
       timer.start();
     }
