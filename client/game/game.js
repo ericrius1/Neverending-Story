@@ -23,9 +23,7 @@ Template.game.me = function(){
 }
 
 Template.game.submission = function(){
-  if(!client.is_voting())return "";
-  var selectedPlayerId = Session.get('game.activeTab');
-  return client.selected_player_submission(selectedPlayerId);
+  return client.selected_player_submission();
 }
 
 Template.game.selected= function(){
@@ -69,12 +67,12 @@ Template.game.events({
   'click label.approved': function(evt){
     var id = Session.get('game.activeTab');
     Players.update({_id: id}, {$inc: {votes: 1}, $set: {hasVoted: true}});
-    //Players.update({_id: id}, {$set: {hasVoted: true}});
   },
 
-  'keyup input#storyInput': function(evt){
+  'keyup #storyInput': function(evt){
     var submission = $('#storyInput').val();
-    Players.update({_id: Session.get('player_id')}, {submission: submission});
+    console.log(submission);
+    Players.update(Session.get('player_id'), {$set:{submission: submission}});
   }
 });
 
