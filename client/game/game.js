@@ -66,7 +66,8 @@ Template.game.events({
 
   'click label.approved': function(evt){
     var id = Session.get('game.activeTab');
-    Players.update({_id: id}, {$inc: {votes: 1}, $set: {hasVoted: true}});
+    Players.update({_id: id}, {$inc: {votes: 1}});
+    Players.update(client.player()._id, {$set: {hasVoted: true}});
   },
 
   'keyup #storyInput': function(evt){
