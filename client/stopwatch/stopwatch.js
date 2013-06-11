@@ -54,6 +54,7 @@ var hasStarted = false;
         
         this.$hand.css('-webkit-transform', 'rotate(0deg)');
         this.$overlay.fadeOut();
+        hasStarted = false;
       };
       
     }());
@@ -63,7 +64,8 @@ var hasStarted = false;
       return;
     }
     //we have added element to dom
-    if($('#watch').length > 0 &&  client.timer().clock){
+    //start a new clock
+    if($('#watch').length > 0 && client.timer().clock){
       hasStarted = true;
        var timer = new Timer({
         el: $('#watch'),
