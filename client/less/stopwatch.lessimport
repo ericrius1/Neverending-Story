@@ -1,9 +1,11 @@
+@stopwatch_size: 1/4;
+
 .stopwatch {
   position: relative;
   z-index: 1;
   
-  width: 157px;
-  height: 191.75px;
+  width: 625px * @stopwatch_size;
+  height: 767px * @stopwatch_size;
 
   background-image: url('/images/stopwatch.png');
   background-size: 100% auto;
