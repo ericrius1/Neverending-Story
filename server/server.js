@@ -64,13 +64,6 @@ Meteor.methods({
     });
     global.start_new_round(game_id);
 
-  },
-
-    keepalive: function (player_id) {
-    check(player_id, String);
-    Players.update({_id: player_id},
-                  {$set: {last_keepalive: (new Date()).getTime(),
-                          idle: false}});
   }
 });
 

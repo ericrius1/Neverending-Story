@@ -2,9 +2,7 @@
 
   {{#if show}}
     {{setup_round}}
-    {{#unless voting}}
       {{>stopwatch}}
-    {{/unless}}
     <div class="container">
       
       <div class="page storyContent">
@@ -25,8 +23,6 @@
               <div class="game_instructions">Click the approve button for the submission you like the best!
                                               The submission with the most votes will be incorporated into the story!
               </div>
-            {{else}}
-              {{>clock}}
             {{/if}}
             <div class="game_instructions"> Round {{current_round}} of {{total_rounds}}</div>
         </div>
@@ -36,9 +32,6 @@
 </template>
 
 <template name="clock">
-  <div class="clock">
-      {{clock}}
-  </div>
 </template>
 
 <template name="story">
