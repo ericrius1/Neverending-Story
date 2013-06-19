@@ -76,9 +76,9 @@ Meteor.startup(function() {
       }
     }
   });
-  // Meteor.setInterval(function() {
-  //   if (Meteor.status().connected)
-  //     Meteor.call('keepalive', Session.get('player_id'));
-  // }, 1000);
+   Meteor.setInterval(function() {
+    if (Meteor.status().connected)
+      Meteor.call('keepalive', Session.get('player_id'));
+  }, 10*1000);
 
 });
