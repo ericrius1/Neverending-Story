@@ -44,8 +44,8 @@ Template.game.voting = function() {
 }
 
 
-Template.clock.clock = function() {
-  return client.timer().clock
+Template.game.vote_timer = function() {
+  return client.timer().vote_clock;
 }
 
 Template.game.players = function() {

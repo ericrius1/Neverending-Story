@@ -16,7 +16,7 @@ Meteor.methods({
     var game_id = Games.insert({
       isVoting: false,
       round: 0,
-      totalRounds: global.getRandomArbitrary(3, 6),
+      totalRounds: globalProperties.numRounds,
       gameOver: false
     });
     observe.observe_votes(game_id);

@@ -4,7 +4,7 @@
 }
 
 .notification {
-    font-size: 3rem;
+    font-size: 5rem;
+    font-weight: bold;
     font-family: @font_handwriting;
-    color: purple;
 }
