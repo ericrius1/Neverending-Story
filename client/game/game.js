@@ -44,7 +44,7 @@ Template.game.voting = function() {
 }
 
 Template.game.between_rounds = function() {
-  return true;
+  return client.is_between_rounds();
 }
 
 Template.game.round_winner = function(){
