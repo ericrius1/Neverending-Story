@@ -42,6 +42,10 @@ Template.lobby.events({
     client.player_join();
   },
 
+  'click button.show_instructions_button': function(){
+    $('#show_instructions').toggle('slow');
+  },
+
   'click button.start_story': function() {
     Meteor.call('start_new_game');
   }

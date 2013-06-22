@@ -33,6 +33,14 @@
     }
   }
 
+  #instructions{
+    font-family: @font_cursive, helvetica;
+  }
+
+  #show_instructions{
+    
+  }
+
 .joinButtonEnabled{
   background-color: #C29350;
   opacity: 0.7;
