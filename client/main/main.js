@@ -20,12 +20,14 @@ Template.lobby.can_begin = function() {
   return client.can_begin();
 };
 
-Template.lobby.disabled = function() {
+
+Template.lobby.joinStoryButtonClass = function(){
   var me = client.player();
-  if (me && me.name)
-    return '';
-  return 'disabled="disabled"';
-};
+  if(me && me.name){
+    return "joinButtonEnabled";
+  }
+  return "joinButtonDisabled";
+}
 
 Template.lobby.events({
   'keyup input#myname': function(evt) {
@@ -36,7 +38,7 @@ Template.lobby.events({
       }
     });
   },
-  'click button.join_story': function() {
+  'click button.joinButtonEnabled': function() {
     client.player_join();
   },
 

@@ -23,13 +23,13 @@
         {{#if looking}}
            <div id = 'waiting'>We have room for {{remaining_players}} more!</div>
           {{#if can_begin}}
-            <button id="start_story" class="start_story">Start Story</button>   
+            <button id="start_story" class="joinButtonEnabled">Start Story</button>   
           {{/if}} 
         {{else}}
         <div class ="get_name">
           <div>Enter your name and click the join story button to begin!</div>
           <input id="myname" class = 'storyInput' type="text"/>
-          <button id="join_story" class="join_story"{{{disabled}}}>Join Story</button>
+          <button id="join_story" class = {{joinStoryButtonClass}}>Join Story</button>
         </div>
         {{/if}}
       {{/if}}

@@ -33,6 +33,36 @@
     }
   }
 
+.joinButtonEnabled{
+  background-color: #C29350;
+  opacity: 0.7;
+  display:inline-block;
+  font-family: @font_cursive;
+  color:#000000;
+  font-size:25px;
+  font-weight:bold;
+  text-decoration:none;
+}.joinButtonEnabled:hover {
+  background-color:#F2E5AF;
+}.joinButtonEnabled:active {
+  position:relative;
+  top:1px;
+}
+
+.joinButtonDisabled{
+  background-color: #C29350;
+ 
+  font-family: @font_cursive;
+  opacity: 0.3;
+  display:inline-block;
+  color:#000000;
+  font-size:25px;
+  font-weight:bold;
+  
+  text-decoration:none;
+
+}
+
 
   .get_name {
     font-size: 2em;
