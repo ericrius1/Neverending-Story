@@ -25,6 +25,10 @@
               </div>
               <div id = "voting_timer">{{vote_timer}}</div>
             {{/if}}
+
+            {{#if between_rounds}}
+              <div> {{round_winner}}'s submission was selected to be incorporated into the story!</div>
+            {{/if}}
             <div class="game_instructions"> Round {{current_round}} of {{total_rounds}}</div>
         </div>
 

@@ -20,7 +20,7 @@ observe = {
       added: function() {
         //all players have voted, let's reveal the winner!
         if(global.num_players_voted(game_id)===global.all_players(game_id).count()){
-          global.setup_new_round(game_id);
+          global.start_between_rounds(game_id);
         }
       }
     });
