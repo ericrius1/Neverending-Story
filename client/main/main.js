@@ -43,7 +43,7 @@ Template.lobby.events({
   },
 
   'click button.show_instructions_button': function(){
-    $('#show_instructions').toggle('slow');
+    $('#show_instructions').toggle(2000);
   },
 
   'click button.start_story': function() {

@@ -33,13 +33,21 @@
     }
   }
 
-  #instructions{
-    font-family: @font_cursive, helvetica;
+  .show_instructions_button{
+  background-color: #C29350;
+  opacity: 0.7;
+  display:inline-block;
+  font-family: @font_cursive;
+  color:#000000;
+  font-size:15px;
+  font-weight:bold;
+  text-decoration:none;
   }
 
-  #show_instructions{
-    
-  }
+#show_instructions{
+  display:none;
+  font-family: @font_cursive;
+}
 
 .joinButtonEnabled{
   background-color: #C29350;
