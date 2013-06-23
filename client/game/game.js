@@ -90,7 +90,6 @@ Template.game.events({
 
   'keyup #storyInput': function(evt){
     var submission = $('#storyInput').val();
-    console.log(submission);
     Players.update(Session.get('player_id'), {$set:{submission: submission}});
   }
 });
