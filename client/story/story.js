@@ -26,8 +26,10 @@ observe_vote_stage_ended = function(game_id) {
     isBetweenRounds: true
   });
   var handle = query.observeChanges({
-    added: function() {
+    changed: function() {
       debugger;
     }
   });
 }
+
+observe_vote_stage_ended(client.player().game_id);
