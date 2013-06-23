@@ -8,3 +8,8 @@
     font-weight: bold;
     font-family: @font_handwriting;
 }
+
+#round_winner {
+  font-family: @font_handwriting;
+  font-size: 2.5em;
+}
