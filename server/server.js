@@ -24,11 +24,11 @@ Meteor.methods({
       _id: game_id
     });
     //link a story to a game
-    var prompt = starting_prompts[Math.floor(Math.random() * numPrompts)];
+    var story_prompt = starting_prompts[Math.floor(Math.random() * numPrompts)];
     Stories.insert({
       _id: game_id,
-      prompt: prompt,
-      content: prompt
+      story_prompt: story_prompt,
+      content: story_prompt
     });
     console.log(Stories.findOne(game_id));
 
