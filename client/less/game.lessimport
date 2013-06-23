@@ -4,7 +4,7 @@
 }
 
 .notification {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
     font-family: @font_handwriting;
 }

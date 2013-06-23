@@ -48,7 +48,7 @@ Template.game.between_rounds = function() {
 }
 
 Template.game.round_winner = function(){
-  return "ericrius";
+  return client.round_winner();
 }
 
 
@@ -58,6 +58,10 @@ Template.game.vote_timer = function() {
 
 Template.game.players = function() {
   return client.all_players();
+}
+
+Template.game.round_winner = function(){
+  return global.get_winner(client.player().game_id).name;
 }
 
 Template.game.current_round = function(){
