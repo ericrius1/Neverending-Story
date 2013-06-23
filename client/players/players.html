@@ -1,6 +1,10 @@
 
 <template name = "players">
   {{#each all_players}}
-      <a data-player-id="{{_id}}" href="#" class={{selected}}>{{name}}</a>
+    {{# if anonymous_players}}
+        <a data-player-id="{{_id}}" href="#" class={{selected}}>anon</a>
+    {{else}}
+        <a data-player-id="{{_id}}" href="#" class={{selected}}>{{name}}</a>
+    {{/if}}
   {{/each}}
 </template>
