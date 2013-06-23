@@ -18,7 +18,7 @@ Template.story.story_prompt = function() {
   return story_prompt;
 }
 
-
+//NEED TO FIX THIS
 observe_vote_stage_ended = function(game_id) {
   //anytime a player votes, add to count
   var query = Games.find({
@@ -26,7 +26,7 @@ observe_vote_stage_ended = function(game_id) {
     isBetweenRounds: true
   });
   var handle = query.observeChanges({
-    changed: function() {
+    added: function() {
       debugger;
     }
   });
