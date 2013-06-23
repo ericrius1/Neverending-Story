@@ -26,10 +26,11 @@ observe_vote_stage_ended = function(game_id) {
     isBetweenRounds: true
   });
   var handle = query.observeChanges({
-    changed: function() {
-      debugger;
+    added: function() {
     }
   });
 }
 
-observe_vote_stage_ended(client.player().game_id);
+Meteor.startup(function(){
+  observe_vote_stage_ended();
+})

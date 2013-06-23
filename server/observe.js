@@ -17,7 +17,7 @@ observe = {
     //anytime a player votes, add to count
     var query = Players.find({game_id: game_id, hasVoted:true});
     var handle = query.observeChanges({
-      changed: function() {
+      added: function() {
         //all players have voted, let's reveal the winner!
         if(global.num_players_voted(game_id)===global.all_players(game_id).count()){
           global.start_between_rounds(game_id);
