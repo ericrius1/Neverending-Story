@@ -53,9 +53,7 @@ Template.game.vote_timer = function() {
   return client.timer().vote_clock;
 }
 
-Template.game.players = function() {
-  return client.all_players();
-}
+
 
 Template.game.round_winner = function(){
   return global.get_winner(client.player().game_id).name;

@@ -10,9 +10,7 @@
       </div>
 
       <nav class="tabs">
-        {{#each players}}
-          <a data-player-id="{{_id}}" href="#" class={{selected}}>{{name}}</a>
-        {{/each}}
+        {{>players}}
       </nav>
       <div class="page">
         <div class="fragment">

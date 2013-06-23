@@ -16,19 +16,19 @@ Template.story.story_prompt = function() {
 }
 
 //NEED TO FIX THIS
-// observe_vote_stage_ended = function() {
+observe_vote_stage_ended = function() {
 
-//   //anytime a player votes, add to count
-//   var query = Games.find({
-//     game_id: game_id,
-//     isBetweenRounds: true
-//   });
-//   var handle = query.observeChanges({
-//     added: function() {
-//       appendSubmission(game_id);
-//     }
-//   });
-// }
+  //anytime a player votes, add to count
+  var query = Games.find({
+    game_id: game_id,
+    isBetweenRounds: true
+  });
+  var handle = query.observeChanges({
+    added: function() {
+      // appendSubmission(game_id);
+    }
+  });
+}
 
 appendSubmission = function(game_id){
   var winning_submission = global.get_winner(game_id).submission;
@@ -38,5 +38,5 @@ appendSubmission = function(game_id){
 }
 
 Meteor.startup(function(){
-  //observe_vote_stage_ended();
+  observe_vote_stage_ended();
 })

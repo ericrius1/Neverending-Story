@@ -47,7 +47,6 @@ Template.lobby.events({
   },
 
   'click button#start_story': function() {
-    debugger;
     Meteor.call('start_new_game');
   }
 });
