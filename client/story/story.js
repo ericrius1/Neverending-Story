@@ -38,5 +38,5 @@ appendSubmission = function(game_id){
 }
 
 Meteor.startup(function(){
-  observe_vote_stage_ended();
+  //observe_vote_stage_ended();
 })
