@@ -22,7 +22,7 @@ Meteor.methods({
     observe.observe_votes(game_id);
     Timers.insert({
       _id: game_id
-    })
+    });
     //link a story to a game
     var prompt = starting_prompts[Math.floor(Math.random() * numPrompts)];
     Stories.insert({
@@ -30,6 +30,7 @@ Meteor.methods({
       prompt: prompt,
       content: prompt
     });
+    console.log(Stories.findOne(game_id));
 
     //Move everyone who declared themselves ready in the lobby into the game
     Players.update({
