@@ -6,9 +6,6 @@ Template.game.setup_round = function() {
   client.setup_round();
 }
 
-Template.story.content = function(){
-  return client.story_content();
-}
 
 
 Template.game.my_name = function(){
