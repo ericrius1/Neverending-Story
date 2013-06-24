@@ -31,7 +31,7 @@ var hasStarted = false;
         
         // Shade the overlay
         if (timePct > 0.55) {
-          var overlayOpacity = timePct - 0.75;
+          var overlayOpacity = timePct - 0.55;
           
           this.$overlay.animate({
             opacity: overlayOpacity
