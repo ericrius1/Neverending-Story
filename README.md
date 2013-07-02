@@ -21,3 +21,5 @@ Tab through all of your co-authors submissions and vote on the one you think is 
 You are meant to continue the story based on this prompt. 
 So, for example, if you see "It was a dark and stormy night..." you could write "and the rain fell in torrents..." for your submission. 
 If you don't see a prompt, write anything at all to start the story off!
+
+Go to Neverendingstory.meteor.com and invite some friends to write a story together!
