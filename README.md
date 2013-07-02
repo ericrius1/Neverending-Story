@@ -2,6 +2,7 @@ Neverending-Story
 =================
 
 Welcome to Neverending Story!
+Nevereding Story is a collaboritive story-writing game where the players work together to create a story based on a given prompt
 
 1. Each story is composed of multiple rounds
 
