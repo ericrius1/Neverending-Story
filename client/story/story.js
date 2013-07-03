@@ -33,7 +33,6 @@ observe_vote_stage_ended = function() {
 appendSubmission = function(game_id){
   var winning_submission = global.get_winner(game_id).submission;
   console.log("appending");
-  debugger;
   $('#story_content').append(winning_submission);
 }
 
