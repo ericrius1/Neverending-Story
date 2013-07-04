@@ -11,7 +11,6 @@ Meteor.methods({
   start_new_game: function() {
 
     var numPrompts = Object.keys(starting_prompts).length;
-    console.log("new game started")
     //create a new game
     var game_id = Games.insert({
       isVoting: false,
