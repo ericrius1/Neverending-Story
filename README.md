@@ -2,24 +2,50 @@ Neverending-Story
 =================
 
 Welcome to Neverending Story!
-Nevereding Story is a collaboritive story-writing game where the players work together to create a story based on a given prompt
+The Nevereding Story is a collaboritive story-writing game where the players work together to create a story based on a given prompt
 
-1. Each story is composed of multiple rounds
+For instructions on how to play the game, navigate to neverendingstory.meteor.com and click on the "instructions" button
 
-2. Each round has two parts. In the first part, you and your co-authors write your addition to the narrative in-progress. 
-Keep an eye on the old-timey timer on the upper right hand side of the screen.
-when the second-hand reaches 12 o clock, you are out of time!
+Neverending Story (NES) is composed of a number of Handlebars templates and mongoDB collections, 
+which generally correspond to each other in a one-to-one fashion.]
 
-3. The second stage of the round is the voting stage. 
-Tab through all of your co-authors submissions and vote on the one you think is the best addition to the unfolding narrative.
+MODEL (Collections)
 
-4. After everyone votes, the submission with the most votes will be incorporated into the story!
+GAMES COLLECTION
+The Games collection stores all of the games that have been created. Each game keeps track of the current round, total rounds,
+and whether players are currently voting or writing.
 
-5. Now a new round starts, with everyone writing a new submission based on the continuation of the previous round's winning submisison.
+PLAYERS COLLECTION
+Each player holds a reference to the game they are currently in, if any (each player can only be in one game).
+A player also stores the number of votes he has gotten for his submission each round, as well as whether he has 
+voted in that round yet
 
-6. When a game first begins, you may see a prompt at the top of the page. 
-You are meant to continue the story based on this prompt. 
-So, for example, if you see "It was a dark and stormy night..." you could write "and the rain fell in torrents..." for your submission. 
-If you don't see a prompt, write anything at all to start the story off!
+STORIES COLLECTION
+Each story holds a reference to the game it is attached to, 
+and the original prompt as well as the dynamically forming narrative content.
 
-Go to http://neverendingstory.meteor.com and invite some friends to write a story together!
+TIMERS COLLECTION
+Each Timer holds a reference to the game it is attached to, and keeps track of time remaining for players to write
+their submission.
+
+VIEW (Templates)
+
+The first template to appear when the player navigates to the neverending story site is the Main view. The main view displays one of three subviews,
+the Lobby, Game, or PostGame View.
+
+Lobby View:
+The Lobby template allows the player to start or join a game, as well as reading the instructions.
+
+Game View: 
+The Game template is composed of three sub-templates- the players, stopwatch, and story template. 
+
+The players template displays each player as a selectable tab, with their current submission. 
+
+The stopwatch template displays the time as an old-timey watch which uses the CSS3 roation feature to 
+rotate the second-hand around. 
+
+The story template displays the up-to-date story content, thanks to meteor's reactive templating feature, 
+which updates the dom automatically anytime relevent changes on the backend.
+
+
+
