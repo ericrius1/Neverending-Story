@@ -41,7 +41,7 @@ The Game template is composed of three sub-templates- the players, stopwatch, an
 
 The players template displays each player as a selectable tab, with their current submission. 
 
-The stopwatch template displays the time as an old-timey watch which uses the CSS3 roation feature to 
+The stopwatch template displays the time as an old-timey watch which uses the CSS3 rotation feature to 
 rotate the second-hand around. 
 
 The story template displays the up-to-date story content, thanks to meteor's reactive templating feature, 
